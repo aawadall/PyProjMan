@@ -30,11 +30,17 @@ class Task:
 
     @staticmethod
     def calculate_date_from_duration(date, duration):
-        return date + duration
+        try:
+            return date + duration
+        except TypeError:
+            return  None
 
     @staticmethod
     def calculate_duration_from_date(date1, date2):
-        return date2 - date1
+        try:
+            return date2 - date1
+        except TypeError:
+            return None
 
     # Tasks should have
     # ID, Read only property generated at construction
