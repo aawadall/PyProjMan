@@ -25,9 +25,9 @@ class Task:
     # Task methods
 
     @staticmethod
-    def calculate_date_from_duration(date, duration):
+    def calculate_end_date(date1, duration):
         try:
-            return date + duration
+            return date1 + duration
         except TypeError:
             return  None
 
@@ -39,6 +39,13 @@ class Task:
             return None
         except TypeError:
             return None
+
+    @staticmethod
+    def calculate_start_date(date2, duration):
+        try:
+            return date2 - duration
+        except TypeError:
+            return  None
 
     # Tasks should have
     # ID, Read only property generated at construction
@@ -102,6 +109,10 @@ class Task:
     @planned_start.setter
     def planned_start(self, value):
         self._planned_start = value
+        if self._planned_duration is not None:
+            self.planned_end = Task.calculate_date_from_duration(self._planned_start , self.planned_duration)
+        elif self._planned_end is not None:
+            self.planned_duration = Task.calculate_duration_from_date(self.planned_start, self.planned_end)
 
     # Ending
     @property
@@ -112,6 +123,11 @@ class Task:
     @planned_end.setter
     def planned_end(self, value):
         self._planned_end = value
+
+        if self._planned_duration is not None:
+            self.planned_end = Task.calculate_end_date(self._planned_start , self.planned_duration)
+        elif self._planned_end is not None:
+            self.planned_duration = Task.calculate_duration_from_date(self.planned_start, self.planned_end)
 
     # Duration
     @property
@@ -163,3 +179,31 @@ class Task:
     @completed.setter
     def completed(self, value):
         self._pct_complete = value
+
+    def report(self):
+        """Report Current Task Statistics"""
+        # List Task ID, Name
+        print("{} : {}".format(self.id, self.name))
+        # List Task Status
+        print("{} % Completed ".format(self.completed*100))
+        #  List Planned/Actual Time Metrics
+        print("""
+Planned:    
+    Start   : {}  
+    End     : {}  
+    Duration: {}
+Actual:     
+    Start   : {}
+    End     : {}
+    Duration: {}
+        """.format(self.planned_start, self.planned_end, self.planned_duration,
+                   self.actual_start, self.actual_end, self.actual_duration))
+
+        # List Prerequisite Tasks
+        print("Prerequisite Tasks")
+        for prereq in self.prerequisites:
+            print("{} - {}".format(prereq.id, prereq.name))
+        # List Dependant Tasks
+        print("Dependant Tasks")
+        for dependant in self.dependants:
+            print("{} - {}".format(dependant.id, dependant.name))
