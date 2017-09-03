@@ -199,3 +199,63 @@ class TestTask(TestCase):
         duration = datetime.timedelta(days=1, hours=1, minutes=10)
 
         self.assertEqual(None, Task.calculate_start_date(baseline_date, duration=duration))
+
+    def test_planned_end_from_others(self):
+        """Calculate Planned End Date from Start Date and Duration"""
+        t = Task()
+        start    = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
+        end      = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
+        duration = datetime.timedelta(days=1, hours=1, minutes=10)
+        t.planned_start = start
+        t.planned_duration = duration
+        self.assertEqual(end, t.planned_end)
+
+    def test_planned_duration_from_others(self):
+        """Calculate Planned Duration from Start Date and End Date"""
+        t = Task()
+        start    = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
+        end      = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
+        duration = datetime.timedelta(days=1, hours=1, minutes=10)
+        t.planned_start = start
+        t.planned_end   = end
+        self.assertEqual(duration, t.planned_duration)
+
+    def test_planned_start_from_others(self):
+        """Calculate Planned Start Date from End Date and Duration"""
+        t = Task()
+        start    = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
+        end      = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
+        duration = datetime.timedelta(days=1, hours=1, minutes=10)
+        t.planned_end = end
+        t.planned_duration = duration
+        self.assertEqual(start, t.planned_start)
+
+    def test_actual_end_from_others(self):
+        """Calculate Actual End Date from Start Date and Duration"""
+        t = Task()
+        start    = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
+        end      = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
+        duration = datetime.timedelta(days=1, hours=1, minutes=10)
+        t.actual_start = start
+        t.actual_duration = duration
+        self.assertEqual(end, t.actual_end)
+
+    def test_actual_duration_from_others(self):
+        """Calculate Actual Duration  from Start Date and End Date"""
+        t = Task()
+        start    = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
+        end      = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
+        duration = datetime.timedelta(days=1, hours=1, minutes=10)
+        t.actual_start = start
+        t.actual_end = end
+        self.assertEqual(duration, t.actual_duration)
+
+    def test_actual_start_from_others(self):
+        """Calculate Actual Start Date from End Date and Duration"""
+        t = Task()
+        start    = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
+        end      = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
+        duration = datetime.timedelta(days=1, hours=1, minutes=10)
+        t.actual_end = end
+        t.actual_duration = duration
+        self.assertEqual(start, t.actual_start)

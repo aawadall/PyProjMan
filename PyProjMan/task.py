@@ -109,10 +109,11 @@ class Task:
     @planned_start.setter
     def planned_start(self, value):
         self._planned_start = value
+        # Calculate Rest of components from this and a known one
         if self._planned_duration is not None:
-            self.planned_end = Task.calculate_date_from_duration(self._planned_start , self.planned_duration)
+            self._planned_end = Task.calculate_end_date(date1= self._planned_start, duration= self.planned_duration)
         elif self._planned_end is not None:
-            self.planned_duration = Task.calculate_duration_from_date(self.planned_start, self.planned_end)
+            self._planned_duration = Task.calculate_duration_from_date(date1= self.planned_start,date2= self.planned_end)
 
     # Ending
     @property
@@ -123,11 +124,11 @@ class Task:
     @planned_end.setter
     def planned_end(self, value):
         self._planned_end = value
-
+        # Calculate Rest of components from this and a known one
         if self._planned_duration is not None:
-            self.planned_end = Task.calculate_end_date(self._planned_start , self.planned_duration)
-        elif self._planned_end is not None:
-            self.planned_duration = Task.calculate_duration_from_date(self.planned_start, self.planned_end)
+            self._planned_start = Task.calculate_start_date(date2= self._planned_end ,duration= self.planned_duration)
+        elif self._planned_start is not None:
+            self._planned_duration = Task.calculate_duration_from_date(date1= self.planned_start,date2= self.planned_end)
 
     # Duration
     @property
@@ -139,6 +140,12 @@ class Task:
     def planned_duration(self, value):
         self._planned_duration = value
 
+        # Calculate Rest of components from this and a known one
+        if self._planned_start is not None:
+            self.planned_end = Task.calculate_end_date(date1= self._planned_start ,duration=self._planned_duration)
+        elif self._planned_end is not None:
+            self.planned_start = Task.calculate_start_date(date2= self._planned_end,duration=  self._planned_duration)
+
     # Actual
     # Starting
     @property
@@ -149,6 +156,11 @@ class Task:
     @actual_start.setter
     def actual_start(self, value):
         self._actual_start = value
+        # Calculate Rest of components from this and a known one
+        if self._actual_duration is not None:
+            self.actual_end = Task.calculate_end_date(self._actual_start , self.actual_duration)
+        elif self._actual_end is not None:
+            self.actual_duration = Task.calculate_duration_from_date(self.actual_start, self.actual_end)
 
     # Ending
     @property
@@ -159,6 +171,11 @@ class Task:
     @actual_end.setter
     def actual_end(self, value):
         self._actual_end = value
+        # Calculate Rest of components from this and a known one
+        if self._actual_start is not None:
+            self._actual_duration = Task.calculate_duration_from_date(self._actual_start , self.actual_end)
+        elif self._actual_duration is not None:
+            self._actual_start = Task.calculate_start_date(self.actual_end, self.actual_duration)
 
     # Duration
     @property
@@ -169,6 +186,11 @@ class Task:
     @actual_duration.setter
     def actual_duration(self, value):
         self._actual_duration = value
+        # Calculate Rest of components from this and a known one
+        if self._actual_start is not None:
+            self.actual_end = Task.calculate_end_date(self._actual_start , self.actual_duration)
+        elif self._actual_end is not None:
+            self.actual_start = Task.calculate_start_date(self.actual_end, self.actual_duration)
 
     # Status
     @property
