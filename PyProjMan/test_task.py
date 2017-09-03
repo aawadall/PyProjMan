@@ -1,5 +1,7 @@
+import uuid
 from unittest import TestCase
 from PyProjMan.task import  Task
+import uuid
 import datetime
 
 class TestTask(TestCase):
@@ -51,8 +53,10 @@ class TestTask(TestCase):
         self.assertEqual(Task.calculate_duration_from_date(date1=baseline_date, date2=end_date), None)
 
     def test_id(self):
-        """How to test UID?"""
-        self.fail()
+        """Check if Task ID has UUID Version 4"""
+        t = Task()
+        expected = 4
+        self.assertEqual(expected,t.id.version)
 
     def test_name(self):
         """Test Task Name Property Setter and Getter"""
@@ -63,47 +67,105 @@ class TestTask(TestCase):
 
 
     def test_prerequisites(self):
-        self.fail()
+        """
+        Create a list of tasks
+        Create a single task
+        Assign list of tasks to the single task
+        """
+        target = Task()
+        prereqs = []
+        for i in range(10):
+            p = Task()
+            prereqs.append(p)
+        target.prerequisites = prereqs
+
+        self.assertEqual(prereqs,target.prerequisites)
 
 
-    def test_append(self):
-        self.fail()
+    def test_append_prereq(self):
+        """
+        Create a Task
+        Create another task and append it to prerequisites of first task
+        """
+        target = Task()
+        prereq = Task()
+        target.prerequisites.append(prereq)
+        self.assertIn(prereq, target.prerequisites)
 
-    def test_extend(self):
-        self.fail()
+
 
     def test_dependants(self):
-        self.fail()
+        """
+        Create a task
+        Create a set of tasks
+        set set of tasks as dependants of the first task
+        """
+        target = Task()
+        dependants = []
+        for i in range(10):
+            d = Task()
+            dependants.append(d)
+        target.dependants = dependants
+        self.assertEqual(dependants, target.dependants)
 
 
-    def test_append(self):
-        self.fail()
+    def test_append_dependants(self):
+        """
+        Create a Task
+        Create a second task
+        Append second task to first task's list of dependants
+        """
+        target = Task()
+        dep = Task()
+        target.dependants.append(dep)
+        self.assertIn(dep, target.dependants)
 
-    def test_extend(self):
-        self.fail()
+
 
     def test_planned_start(self):
-        self.fail()
-
+        """Create a task, define a date/time, assign it to planned start date"""
+        target = Task()
+        date   = datetime.datetime(year=2017,month=10,day=1,hour=10,minute=15)
+        target.planned_start = date
+        self.assertEqual(target.planned_start,date)
 
     def test_planned_end(self):
-        self.fail()
+        """Create a task, define a date/time, assign it to planned end date"""
+        target = Task()
+        date   = datetime.datetime(year=2017,month=10,day=1,hour=10,minute=15)
+        target.planned_end = date
+        self.assertEqual(target.planned_end,date)
 
 
     def test_planned_duration(self):
-        self.fail()
-
+        """Create a task, define duration, assign to planned duration"""
+        target = Task()
+        duration = datetime.timedelta(days=1, hours=1, minutes=10)
+        target.planned_duration = duration
+        self.assertEqual(target.planned_duration,duration)
 
     def test_actual_start(self):
-        self.fail()
+        """Create a task, define a date/time, assign it to actual start date"""
+        target = Task()
+        date   = datetime.datetime(year=2017,month=10,day=1,hour=10,minute=15)
+        target.actual_start = date
+        self.assertEqual(target.actual_start,date)
 
 
     def test_actual_end(self):
-        self.fail()
+        """Create a task, define a date/time, assign it to actual end date"""
+        target = Task()
+        date   = datetime.datetime(year=2017,month=10,day=1,hour=10,minute=15)
+        target.actual_end = date
+        self.assertEqual(target.actual_end,date)
 
 
     def test_actual_duration(self):
-        self.fail()
+        """Create a task, define duration, assign to actual duration"""
+        target = Task()
+        duration = datetime.timedelta(days=1, hours=1, minutes=10)
+        target.actual_duration = duration
+        self.assertEqual(target.actual_duration,duration)
 
 
 

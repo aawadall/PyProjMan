@@ -75,9 +75,7 @@ class Task:
         self._prerequisites = self._prerequisites + [value]
         return self._prerequisites
 
-    def extend(self, value):
-        """Extends prerequisites """
-        return self._prerequisites.extend(value)
+
 
     # Dependants
     @property
@@ -93,8 +91,6 @@ class Task:
         self._dependants = self._dependants + [value]
         return self._dependants
 
-    def extend(self, value):
-        return self._dependants.extend(value)
 
     # Planned
     # Starting
