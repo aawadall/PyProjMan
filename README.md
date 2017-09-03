@@ -15,14 +15,14 @@ Estimated Release Date | Sept 17' 2017
 ----------------------:|--------------:
 Estimated Effort       | 2 man weeks
 
-#### Features
+#### Features & Specs
 
-*[ ] Basic Application Skeleton 
+*[x] Basic Application Skeleton 
 *[ ] Commandline user interface 
-*[ ] Define the **_task_**, as basic building block of the project
+*[x] Define the **_task_**, as basic building block of the project
 *[ ] Tasks defined in runtime without saving them 
 *[ ] Calculate Project statistics, in a text report 
-*[ ] Build unit tests for each feature
+*[x] Build unit tests for each feature
  
 ### Beta
 Estimated Release Date | Oct 1' 2017
