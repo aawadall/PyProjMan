@@ -23,10 +23,6 @@ class Task:
         self._id = uuid.uuid4()
 
     # Task methods
-    # TODO: Define a set of date/duration calculation methods
-    #       Such that:
-    # Changing duration, will automatically calculate end date
-    # Changing End date, will automatically calculate duration
 
     @staticmethod
     def calculate_date_from_duration(date, duration):
@@ -38,7 +34,9 @@ class Task:
     @staticmethod
     def calculate_duration_from_date(date1, date2):
         try:
-            return date2 - date1
+            if date2 > date1:
+                return date2 - date1
+            return None
         except TypeError:
             return None
 

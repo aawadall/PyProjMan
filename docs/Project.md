@@ -1,6 +1,9 @@
 ## Project Description
 A simple (for the timebeing) project management tool, designed for developers. 
 
+_I might need to migrate this document into GitHub issues_
+
+_This document is more of a scrap paper than real project documentation_
 ## Distinguishing Features
 ### Rapid project builder wizard
 a way to design a project plan, by asking the user about major components of the current step, and continue defining more details until a step is defined by the simplest tasks
@@ -38,32 +41,6 @@ Multiple agents communicate and update same plan using a local repo, remote repo
 where multiple instances of the application on multiple machines, 
 would communicate and update each other
 
-## Releases
-### Alpha
-Estimated Release Date | Sept 30' 2017
-----------------------:|--------------:
-Estimated Effort       | 2 man weeks
-
-#### Features
-
-*[ ] Basic Application Skeleton 
-    *[ ] Commandline user interface 
-    *[ ] Define a task, as basic building block of the project
-    *[ ] Tasks defined in runtime without saving them 
-    *[ ] Calculate Project statistics 
-*[ ] Build code with unit testing
-### Beta
-Estimated Release Date | Sept 23' 2017
-----------------------:|--------------:
-Estimated Effort       | 2 man weeks
-
-#### Features
-
-*[ ] Basic Application Skeleton 
-    *[ ] Commandline user interface 
-    *[ ] Define a task, as basic building block of the project
-    *[ ] Tasks defined in runtime without saving them 
-    *[ ] Calculate Project statistics 
     
 ## Project Tasks
 *[ ] Project Management Tool using Python
@@ -85,3 +62,5 @@ Estimated Effort       | 2 man weeks
 *[ ] Can we implement drag and drop to define tasks?
 *[ ] Can we integrate with github issues, projects and milestones?
 *[ ] Can we integrate with Google services?
+*[ ] Keep track of task changes, and record timestamp and user who changed it 
+*[ ] Can we write a timekeeper object?

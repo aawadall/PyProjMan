@@ -51,19 +51,20 @@ class TestTask(TestCase):
         self.assertEqual(Task.calculate_duration_from_date(date1=baseline_date, date2=end_date), None)
 
     def test_id(self):
+        """How to test UID?"""
         self.fail()
 
     def test_name(self):
-        self.fail()
+        """Test Task Name Property Setter and Getter"""
+        t = Task()
+        expected = 'Task'
+        t.name = expected
+        self.assertEqual(t.name,expected, t.name)
 
-    def test_name(self):
-        self.fail()
 
     def test_prerequisites(self):
         self.fail()
 
-    def test_prerequisites(self):
-        self.fail()
 
     def test_append(self):
         self.fail()
@@ -74,8 +75,6 @@ class TestTask(TestCase):
     def test_dependants(self):
         self.fail()
 
-    def test_dependants(self):
-        self.fail()
 
     def test_append(self):
         self.fail()
@@ -86,41 +85,31 @@ class TestTask(TestCase):
     def test_planned_start(self):
         self.fail()
 
-    def test_planned_start(self):
-        self.fail()
 
     def test_planned_end(self):
         self.fail()
 
-    def test_planned_end(self):
-        self.fail()
 
     def test_planned_duration(self):
         self.fail()
 
-    def test_planned_duration(self):
-        self.fail()
 
     def test_actual_start(self):
         self.fail()
 
-    def test_actual_start(self):
-        self.fail()
 
     def test_actual_end(self):
         self.fail()
 
-    def test_actual_end(self):
-        self.fail()
 
     def test_actual_duration(self):
         self.fail()
 
-    def test_actual_duration(self):
-        self.fail()
+
 
     def test_completed(self):
-        self.fail()
-
-    def test_completed(self):
-        self.fail()
+        """Test Task completion percentage"""
+        t = Task()
+        expected = 0.5
+        t.completed = expected
+        self.assertEqual(expected,t.completed)
