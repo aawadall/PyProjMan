@@ -2,6 +2,7 @@ import uuid
 import datetime
 # Building Block
 class Task:
+    """Building block of a project plan"""
     type = "Task Element"
 
     def __init__(self):
