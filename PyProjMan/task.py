@@ -5,7 +5,7 @@ class Task:
     """Building block of a project plan"""
     type = "Task Element"
 
-    def __init__(self):
+    def __init__(self,name=None):
         # Actual Task Metrics
         self._actual_start = None  # Start Date/Time
         self._actual_end = None  # End Date/Time
@@ -19,7 +19,7 @@ class Task:
         self._pct_complete = 0.0  # Percentage Completed
 
         self._dependants = []
-        self._name = None
+        self._name = name
         self._prerequisites = []
         self._id = uuid.uuid4()
 
@@ -80,7 +80,9 @@ class Task:
 
     def append(self, value):
         """Append to prerequisites array"""
-        self._prerequisites = self._prerequisites + [value]
+        if value not in self._prerequisites:
+            self._prerequisites = self._prerequisites + [value]
+        value.dependants.append(self)
         return self._prerequisites
 
 
@@ -96,7 +98,9 @@ class Task:
         self._dependants = value
 
     def append(self, value):
-        self._dependants = self._dependants + [value]
+        if value not in self._dependants:
+            self._dependants = self._dependants + [value]
+        value.prerequisites.append(self)
         return self._dependants
 
 
@@ -230,3 +234,29 @@ Actual:
         print("Dependant Tasks")
         for dependant in self.dependants:
             print("{} - {}".format(dependant.id, dependant.name))
+
+    def project_stats(self):
+        """Reports overall project statistics starting from current node"""
+        # Overall Start, Overall End, Overall Duration, Overall Completed
+        # List Prerequisites
+        # Task Name, Start, End, Completed
+        # List Dependants
+        # Task Name, Start, End, Completed
+
+
+    def crawl_up(self):
+        """Search all parent tasks"""
+        parents = []
+        if self._prerequisites.__len__()  != 0:
+            for prerequisite in self._prerequisites:
+                parents.extend(prerequisite.crawl_up())
+
+        return list(set(parents))
+
+    def crawl_down(self):
+        """Search all children tasks"""
+        children = []
+        if self._dependants.__len__()  != 0:
+            for child in self._dependants:
+                children.extend(child.crawl_down())
+        return list(set(children))

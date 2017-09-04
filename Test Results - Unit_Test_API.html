@@ -573,7 +573,7 @@ jQuery.cookie = function(name, value, options) {
 <div id="container">
 <div id="header">
 <div class="time" xmlns="">0 ms</div>
-<h1>Unit Test API: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">29 total, </span><span class="failed">27 failed, </span><span class="passed">2 passed</span></strong>
+<h1>Unit Test API: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">32 total, </span><span class="failed">24 failed, </span><span class="passed">8 passed</span></strong>
 </h1>
 <div id="treecontrol">
 <ul>
@@ -599,29 +599,43 @@ jQuery.cookie = function(name, value, options) {
 <div class="time">0 ms</div>
 </em>TestAPI</span>
 <ul>
-<li class="level test failed open">
+<li class="level test">
 <span><em class="time">
 <div class="time">0 ms</div>
-</em><em class="status">failed</em>test_adding_dependant_task</span>
+</em><em class="status">passed</em>test_adding_bad_dependant_task</span>
 <ul>
 <li class="text">
-<span class="stdout">F<br/></span>
-</li>
-<li class="text">
-<span class="stderr">test_API.py:24 (TestAPI.test_adding_dependant_task)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_adding_dependant_task&gt;<br/>    def test_adding_dependant_task(self):<br/>        &quot;&quot;&quot;Test appending a dependant task to root object&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:27: AssertionError<br/></span>
+<span class="stdout">.<br/></span>
 </li>
 </ul>
 </li>
-<li class="level test failed open">
+<li class="level test">
 <span><em class="time">
 <div class="time">0 ms</div>
-</em><em class="status">failed</em>test_adding_prerequisite_task</span>
+</em><em class="status">passed</em>test_adding_bad_prerequisite_task</span>
 <ul>
 <li class="text">
-<span class="stdout">F<br/></span>
+<span class="stdout">.<br/></span>
 </li>
+</ul>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">0 ms</div>
+</em><em class="status">passed</em>test_adding_dependant_task</span>
+<ul>
 <li class="text">
-<span class="stderr">test_API.py:28 (TestAPI.test_adding_prerequisite_task)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_adding_prerequisite_task&gt;<br/>    def test_adding_prerequisite_task(self):<br/>        &quot;&quot;&quot;Test appending a prerequisite task to root object&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:31: AssertionError<br/></span>
+<span class="stdout">.<br/></span>
+</li>
+</ul>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">0 ms</div>
+</em><em class="status">passed</em>test_adding_prerequisite_task</span>
+<ul>
+<li class="text">
+<span class="stdout">.<br/></span>
 </li>
 </ul>
 </li>
@@ -634,7 +648,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:56 (TestAPI.test_alter_task_name)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_alter_task_name&gt;<br/>    def test_alter_task_name(self):<br/>        &quot;&quot;&quot;Test changing task name&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:59: AssertionError<br/></span>
+<span class="stderr">test_API.py:124 (TestAPI.test_alter_task_name)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_alter_task_name&gt;<br/>    def test_alter_task_name(self):<br/>        &quot;&quot;&quot;Test changing task name&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:127: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -647,7 +661,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:131 (TestAPI.test_assign_assignee)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_assign_assignee&gt;<br/>    def test_assign_assignee(self):<br/>        &quot;&quot;&quot;Test defining assignee to a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:134: AssertionError<br/></span>
+<span class="stderr">test_API.py:199 (TestAPI.test_assign_assignee)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_assign_assignee&gt;<br/>    def test_assign_assignee(self):<br/>        &quot;&quot;&quot;Test defining assignee to a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:202: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -660,7 +674,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:84 (TestAPI.test_calculated_actual_duration)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_calculated_actual_duration&gt;<br/>    def test_calculated_actual_duration(self):<br/>        &quot;&quot;&quot;Test calculated task&#39;s actual duration from actual start and actual end&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:87: AssertionError<br/></span>
+<span class="stderr">test_API.py:152 (TestAPI.test_calculated_actual_duration)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_calculated_actual_duration&gt;<br/>    def test_calculated_actual_duration(self):<br/>        &quot;&quot;&quot;Test calculated task&#39;s actual duration from actual start and actual end&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:155: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -673,7 +687,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:75 (TestAPI.test_calculated_actual_end)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_calculated_actual_end&gt;<br/>    def test_calculated_actual_end(self):<br/>        &quot;&quot;&quot;Test calculated task&#39;s actual end from actual start and actual duration&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:78: AssertionError<br/></span>
+<span class="stderr">test_API.py:143 (TestAPI.test_calculated_actual_end)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_calculated_actual_end&gt;<br/>    def test_calculated_actual_end(self):<br/>        &quot;&quot;&quot;Test calculated task&#39;s actual end from actual start and actual duration&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:146: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -686,7 +700,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:66 (TestAPI.test_calculated_actual_start)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_calculated_actual_start&gt;<br/>    def test_calculated_actual_start(self):<br/>        &quot;&quot;&quot;Test calculated task&#39;s actual start from actual end and actual duration&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:69: AssertionError<br/></span>
+<span class="stderr">test_API.py:134 (TestAPI.test_calculated_actual_start)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_calculated_actual_start&gt;<br/>    def test_calculated_actual_start(self):<br/>        &quot;&quot;&quot;Test calculated task&#39;s actual start from actual end and actual duration&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:137: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -699,7 +713,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:112 (TestAPI.test_calculated_planned_duration)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_calculated_planned_duration&gt;<br/>    def test_calculated_planned_duration(self):<br/>        &quot;&quot;&quot;Test calculated task&#39;s planned duration from planned start and planned end&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:115: AssertionError<br/></span>
+<span class="stderr">test_API.py:180 (TestAPI.test_calculated_planned_duration)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_calculated_planned_duration&gt;<br/>    def test_calculated_planned_duration(self):<br/>        &quot;&quot;&quot;Test calculated task&#39;s planned duration from planned start and planned end&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:183: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -712,7 +726,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:103 (TestAPI.test_calculated_planned_end)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_calculated_planned_end&gt;<br/>    def test_calculated_planned_end(self):<br/>        &quot;&quot;&quot;Test calculated task&#39;s planned end from planned start and planned duration&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:106: AssertionError<br/></span>
+<span class="stderr">test_API.py:171 (TestAPI.test_calculated_planned_end)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_calculated_planned_end&gt;<br/>    def test_calculated_planned_end(self):<br/>        &quot;&quot;&quot;Test calculated task&#39;s planned end from planned start and planned duration&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:174: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -725,7 +739,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:94 (TestAPI.test_calculated_planned_start)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_calculated_planned_start&gt;<br/>    def test_calculated_planned_start(self):<br/>        &quot;&quot;&quot;Test calculated task&#39;s planned start from planned end and planned duration&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:97: AssertionError<br/></span>
+<span class="stderr">test_API.py:162 (TestAPI.test_calculated_planned_start)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_calculated_planned_start&gt;<br/>    def test_calculated_planned_start(self):<br/>        &quot;&quot;&quot;Test calculated task&#39;s planned start from planned end and planned duration&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:165: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -738,7 +752,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:125 (TestAPI.test_completed_decrease)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_completed_decrease&gt;<br/>    def test_completed_decrease(self):<br/>        &quot;&quot;&quot;Test decreasing a completed percentage of a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:128: AssertionError<br/></span>
+<span class="stderr">test_API.py:193 (TestAPI.test_completed_decrease)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_completed_decrease&gt;<br/>    def test_completed_decrease(self):<br/>        &quot;&quot;&quot;Test decreasing a completed percentage of a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:196: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -751,7 +765,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:117 (TestAPI.test_completed_define)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_completed_define&gt;<br/>    def test_completed_define(self):<br/>        &quot;&quot;&quot;Test defining a completed percentage of a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:120: AssertionError<br/></span>
+<span class="stderr">test_API.py:185 (TestAPI.test_completed_define)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_completed_define&gt;<br/>    def test_completed_define(self):<br/>        &quot;&quot;&quot;Test defining a completed percentage of a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:188: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -764,20 +778,27 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:121 (TestAPI.test_completed_increase)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_completed_increase&gt;<br/>    def test_completed_increase(self):<br/>        &quot;&quot;&quot;Test increasing a completed percentage of a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:124: AssertionError<br/></span>
+<span class="stderr">test_API.py:189 (TestAPI.test_completed_increase)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_completed_increase&gt;<br/>    def test_completed_increase(self):<br/>        &quot;&quot;&quot;Test increasing a completed percentage of a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:192: AssertionError<br/></span>
 </li>
 </ul>
 </li>
-<li class="level test failed open">
+<li class="level test">
 <span><em class="time">
 <div class="time">0 ms</div>
-</em><em class="status">failed</em>test_create_root_task</span>
+</em><em class="status">passed</em>test_create_root_task</span>
 <ul>
 <li class="text">
-<span class="stdout">F<br/></span>
+<span class="stdout">.<br/></span>
 </li>
+</ul>
+</li>
+<li class="level test">
+<span><em class="time">
+<div class="time">0 ms</div>
+</em><em class="status">passed</em>test_create_root_task_existing</span>
+<ul>
 <li class="text">
-<span class="stderr">test_API.py:20 (TestAPI.test_create_root_task)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_create_root_task&gt;<br/>    def test_create_root_task(self):<br/>        &quot;&quot;&quot;Test creating root task in an API object with no root task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:23: AssertionError<br/></span>
+<span class="stdout">.<br/></span>
 </li>
 </ul>
 </li>
@@ -790,7 +811,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:80 (TestAPI.test_define_actual_duration)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_define_actual_duration&gt;<br/>    def test_define_actual_duration(self):<br/>        &quot;&quot;&quot;Test defining actual task duration&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:83: AssertionError<br/></span>
+<span class="stderr">test_API.py:148 (TestAPI.test_define_actual_duration)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_define_actual_duration&gt;<br/>    def test_define_actual_duration(self):<br/>        &quot;&quot;&quot;Test defining actual task duration&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:151: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -803,7 +824,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:71 (TestAPI.test_define_actual_end)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_define_actual_end&gt;<br/>    def test_define_actual_end(self):<br/>        &quot;&quot;&quot;Test defining actual end date/time for a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:74: AssertionError<br/></span>
+<span class="stderr">test_API.py:139 (TestAPI.test_define_actual_end)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_define_actual_end&gt;<br/>    def test_define_actual_end(self):<br/>        &quot;&quot;&quot;Test defining actual end date/time for a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:142: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -816,7 +837,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:62 (TestAPI.test_define_actual_start)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_define_actual_start&gt;<br/>    def test_define_actual_start(self):<br/>        &quot;&quot;&quot;Test defining actual start date/time for a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:65: AssertionError<br/></span>
+<span class="stderr">test_API.py:130 (TestAPI.test_define_actual_start)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_define_actual_start&gt;<br/>    def test_define_actual_start(self):<br/>        &quot;&quot;&quot;Test defining actual start date/time for a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:133: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -829,7 +850,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:108 (TestAPI.test_define_planned_duration)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_define_planned_duration&gt;<br/>    def test_define_planned_duration(self):<br/>        &quot;&quot;&quot;Test defining planned task duration&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:111: AssertionError<br/></span>
+<span class="stderr">test_API.py:176 (TestAPI.test_define_planned_duration)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_define_planned_duration&gt;<br/>    def test_define_planned_duration(self):<br/>        &quot;&quot;&quot;Test defining planned task duration&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:179: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -842,7 +863,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:99 (TestAPI.test_define_planned_end)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_define_planned_end&gt;<br/>    def test_define_planned_end(self):<br/>        &quot;&quot;&quot;Test defining planned end date/time for a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:102: AssertionError<br/></span>
+<span class="stderr">test_API.py:167 (TestAPI.test_define_planned_end)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_define_planned_end&gt;<br/>    def test_define_planned_end(self):<br/>        &quot;&quot;&quot;Test defining planned end date/time for a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:170: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -855,7 +876,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:90 (TestAPI.test_define_planned_start)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_define_planned_start&gt;<br/>    def test_define_planned_start(self):<br/>        &quot;&quot;&quot;Test defining planned start date/time for a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:93: AssertionError<br/></span>
+<span class="stderr">test_API.py:158 (TestAPI.test_define_planned_start)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_define_planned_start&gt;<br/>    def test_define_planned_start(self):<br/>        &quot;&quot;&quot;Test defining planned start date/time for a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:161: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -868,7 +889,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:40 (TestAPI.test_deleting_cascaded_dependants)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_deleting_cascaded_dependants&gt;<br/>    def test_deleting_cascaded_dependants(self):<br/>        &quot;&quot;&quot;Test deleting a dependant task with dependants of its own&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:43: AssertionError<br/></span>
+<span class="stderr">test_API.py:108 (TestAPI.test_deleting_cascaded_dependants)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_deleting_cascaded_dependants&gt;<br/>    def test_deleting_cascaded_dependants(self):<br/>        &quot;&quot;&quot;Test deleting a dependant task with dependants of its own&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:111: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -881,7 +902,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:44 (TestAPI.test_deleting_cascaded_prerequisites)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_deleting_cascaded_prerequisites&gt;<br/>    def test_deleting_cascaded_prerequisites(self):<br/>        &quot;&quot;&quot;Test deleting a prerequisite task with prerequisites of its own&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:47: AssertionError<br/></span>
+<span class="stderr">test_API.py:112 (TestAPI.test_deleting_cascaded_prerequisites)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_deleting_cascaded_prerequisites&gt;<br/>    def test_deleting_cascaded_prerequisites(self):<br/>        &quot;&quot;&quot;Test deleting a prerequisite task with prerequisites of its own&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:115: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -894,7 +915,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:32 (TestAPI.test_deleting_dependant_task)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_deleting_dependant_task&gt;<br/>    def test_deleting_dependant_task(self):<br/>        &quot;&quot;&quot;Test deleting a dependant task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:35: AssertionError<br/></span>
+<span class="stderr">test_API.py:100 (TestAPI.test_deleting_dependant_task)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_deleting_dependant_task&gt;<br/>    def test_deleting_dependant_task(self):<br/>        &quot;&quot;&quot;Test deleting a dependant task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:103: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -907,7 +928,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:36 (TestAPI.test_deleting_prerequisite_task)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_deleting_prerequisite_task&gt;<br/>    def test_deleting_prerequisite_task(self):<br/>        &quot;&quot;&quot;Test deleting a prerequisite task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:39: AssertionError<br/></span>
+<span class="stderr">test_API.py:104 (TestAPI.test_deleting_prerequisite_task)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_deleting_prerequisite_task&gt;<br/>    def test_deleting_prerequisite_task(self):<br/>        &quot;&quot;&quot;Test deleting a prerequisite task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:107: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -920,7 +941,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:48 (TestAPI.test_find_task_by_name)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_find_task_by_name&gt;<br/>    def test_find_task_by_name(self):<br/>        &quot;&quot;&quot;Test searching for a task by its name&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:51: AssertionError<br/></span>
+<span class="stderr">test_API.py:116 (TestAPI.test_find_task_by_name)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_find_task_by_name&gt;<br/>    def test_find_task_by_name(self):<br/>        &quot;&quot;&quot;Test searching for a task by its name&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:119: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -953,7 +974,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:52 (TestAPI.test_project_summary)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_project_summary&gt;<br/>    def test_project_summary(self):<br/>        &quot;&quot;&quot;Test project statistics calculation&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:55: AssertionError<br/></span>
+<span class="stderr">test_API.py:120 (TestAPI.test_project_summary)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_project_summary&gt;<br/>    def test_project_summary(self):<br/>        &quot;&quot;&quot;Test project statistics calculation&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:123: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -966,7 +987,7 @@ jQuery.cookie = function(name, value, options) {
 <span class="stdout">F<br/></span>
 </li>
 <li class="text">
-<span class="stderr">test_API.py:135 (TestAPI.test_un_assign_assignee)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_un_assign_assignee&gt;<br/>    def test_un_assign_assignee(self):<br/>        &quot;&quot;&quot;Test un-assigning a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:138: AssertionError<br/></span>
+<span class="stderr">test_API.py:203 (TestAPI.test_un_assign_assignee)<br/>self = &lt;PyProjMan.test_API.TestAPI testMethod=test_un_assign_assignee&gt;<br/>    def test_un_assign_assignee(self):<br/>        &quot;&quot;&quot;Test un-assigning a task&quot;&quot;&quot;<br/>&gt;       self.fail(&quot;Not implemented&quot;)<br/>E       AssertionError: Not implemented<br/>test_API.py:206: AssertionError<br/></span>
 </li>
 </ul>
 </li>
@@ -978,7 +999,7 @@ jQuery.cookie = function(name, value, options) {
 </div>
 </div>
 <div id="footer">
-<p>Generated by PyCharm Community Edition on 04/09/17 11:59 AM</p>
+<p>Generated by PyCharm Community Edition on 04/09/17 1:06 PM</p>
 </div>
 </body>
 </html>

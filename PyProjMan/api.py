@@ -26,3 +26,8 @@ class API:
         """Adds a dependant to root"""
         if self._root is not None and type(child) is Task:
             self._root.dependants.append(child)
+
+    def add_prerequisite(self, parent):
+        """Add a prerequisite to root"""
+        if self._root is not None and type(parent) is Task:
+            self._root.prerequisites.append(parent)

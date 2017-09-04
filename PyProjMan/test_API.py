@@ -73,7 +73,30 @@ class TestAPI(TestCase):
 
     def test_adding_prerequisite_task(self):
         """Test appending a prerequisite task to root object"""
-        self.fail("Not implemented")
+        task = Task()
+        task.name = "Root Task"
+
+        api = API(task)
+
+        parent = Task()
+        parent.name = "Child Task"
+
+        api.add_prerequisite(parent)
+
+        self.assertIn(parent,api.root.prerequisites)
+
+    def test_adding_bad_prerequisite_task(self):
+        """Test appending a bad prerequisite task to root object"""
+        task = Task()
+        task.name = "Root Task"
+
+        api = API(task)
+
+        parent =  "Child Task"
+
+        api.add_prerequisite(parent)
+
+        self.assertNotIn(parent,api.root.prerequisites)
 
     def test_deleting_dependant_task(self):
         """Test deleting a dependant task"""
