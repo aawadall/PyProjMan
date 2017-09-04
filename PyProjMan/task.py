@@ -78,11 +78,12 @@ class Task:
         """One transaction setting"""
         self._prerequisites = value
 
-    def append(self, value):
+    def append_prerequisite(self, value):
         """Append to prerequisites array"""
         if value not in self._prerequisites:
+
             self._prerequisites = self._prerequisites + [value]
-        value.dependants.append(self)
+            value.append_dependant(self)
         return self._prerequisites
 
 
@@ -97,10 +98,10 @@ class Task:
     def dependants(self, value):
         self._dependants = value
 
-    def append(self, value):
+    def append_dependant(self, value):
         if value not in self._dependants:
             self._dependants = self._dependants + [value]
-        value.prerequisites.append(self)
+            value.append_prerequisite(self)
         return self._dependants
 
 

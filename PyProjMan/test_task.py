@@ -93,7 +93,11 @@ class TestTask(TestCase):
 
     def test_append_duplicate_prereq(self):
         """Test appending duplicate prerequisites to a task, it should be unique"""
-        self.fail("Not implemented")
+        root = Task("Root Task")
+        parent = Task("Parent Task")
+        root.append_prerequisite(parent)
+        root.append_prerequisite(parent)
+        self.assertNotEqual(2,root.prerequisites.__len__())
 
     def test_dependants(self):
         """
@@ -129,15 +133,15 @@ class TestTask(TestCase):
         """
         target = Task()
         dep = Task()
-        target.dependants.append(dep)
+        target.append_dependant(dep)
         self.assertIn(dep, target.dependants)
 
     def test_append_duplicate_dep(self):
         """Test appending duplicate dependants to a task, it should be unique"""
         root = Task("Root Task")
         child = Task("Child Task")
-        root.dependants.append(child)
-        root.dependants.append(child)
+        root.append_dependant(child)
+        root.append_dependant(child)
         self.assertNotEqual(2,root.dependants.__len__())
 
     def test_planned_start(self):
