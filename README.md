@@ -17,17 +17,12 @@ Estimated Effort       | 2 man weeks
 
 #### Features & Specs
 
-[x] Basic Application Skeleton 
-
-[ ] Commandline user interface 
-
-[x] Define the **_task_**, as basic building block of the project
-
-[ ] Tasks defined in runtime without saving them 
-
-[ ] Calculate Project statistics, in a text report
-
-[x] Build unit tests for each feature
+* Basic Application Skeleton **Done**
+* Commandline user interface 
+* Define the **_task_**, as basic building block of the project **Done**
+* Tasks defined in runtime without saving them 
+* Calculate Project statistics, in a text report 
+* Build unit tests for each feature **Done**
  
 ### [Beta Release][3]
 
@@ -37,15 +32,11 @@ Estimated Effort       | 2 man weeks
 
 #### Features
 
-[ ] Fix known issues
-
-[ ] Basic attributes validation
-
-[ ] Define a license
-
-[ ] Define a user friendly task ID 
-
-[ ] Define a timekeeping object
+* Fix known issues
+* Basic attributes validation
+* Define a license
+* Define a user friendly task ID 
+* Define a timekeeping object
 
 ## Contribution 
 This project is in deep need for contributers, in development, artwork, system design, testing, and documentation.
