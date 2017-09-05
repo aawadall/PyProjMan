@@ -1,3 +1,6 @@
+exclude:
+- /PyProjMan/__init__.py
+- /PyProjMan/sand_box.py
 component_depth: 1
 languages:
 - python
