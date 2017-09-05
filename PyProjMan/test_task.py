@@ -1,7 +1,7 @@
-import uuid
+
 from unittest import TestCase
 from PyProjMan.task import Task
-import uuid
+
 import datetime
 
 
