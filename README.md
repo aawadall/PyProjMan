@@ -1,3 +1,4 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/aawadall/PyProjMan?branch=master)](https://bettercodehub.com/)
 # PyProjMan
 Commandline Based Project Management Application, written in Python. 
 
