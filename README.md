@@ -1,15 +1,24 @@
 # PyProjMan
 Commandline Based Project Management Application, written in Python. 
 
-## About this Project
-This project, is another toy project to help me pickup speed in coding. This time in Python, using Test Driven Development (TDD).
+It is partially started to practice coding in python, and partially to overcome some challenges I personally faced when using existing Project Management Tools. 
+The main goal of this tool, is to allow users to script in project tasks, instead of manually writing things in a spreadsheet and the eye-balling the resulting GANTT chart.
+
+I wanted this project to collect data from users (after getting their consent), and teach a mathematical model patterns collected, such that a mature version of this application would figure out the context of a certain project, and then suggests tasks to be added to the project plan. In addition to providing a more realistic execution time frame. 
+So, instead of requiring an experienced project manager, with experienced team to properly estimate when this project will be completed, the tool will use its collective wisdom, gathered from other projects (failed and successful) to propose change in numbers, in time frame and even cost. 
+
+In addition, exposure to large number of projects, would allow the tool to figure out project contexts, and propose tasks that were not considered as part of the original project plan. 
+
+## Contribution 
+This project is in deep need for contributers, in development, artwork, system design, testing, and documentation.
+If you are interested, please check out  [contribution guidelines][1]
 
 ## Project Releases
 I intend to release this project in small cycles (not decided yet, how frequent), and will take issues from the features backlog, into those releases.
 
 First few releases might not be stable, but hopefully by the first release after alpha and beta releases it should be usable.
 
-### [Alpha Release][2]
+### Current Release : [Alpha][2]
 
 Estimated Release Date | Sept 17' 2017
 ----------------------:|--------------:
@@ -24,23 +33,9 @@ Estimated Effort       | 2 man weeks
 * Calculate Project statistics, in a text report 
 * Build unit tests for each feature **Done**
  
-### [Beta Release][3]
 
-Estimated Release Date | Oct 1' 2017
-----------------------:|--------------:
-Estimated Effort       | 2 man weeks
 
-#### Features
 
-* Fix known issues
-* Basic attributes validation
-* Define a license
-* Define a user friendly task ID 
-* Define a timekeeping object
-
-## Contribution 
-This project is in deep need for contributers, in development, artwork, system design, testing, and documentation.
-If you are interested, please check out  [contribution guidelines][1]
 
 [1]: https://github.com/aawadall/PyProjMan/blob/master/CONTRIBUTING.md
 [2]: https://github.com/aawadall/PyProjMan/milestone/1
