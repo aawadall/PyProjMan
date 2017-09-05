@@ -19,15 +19,15 @@ class API:
     @root.setter
     def root(self,value):
         """Set Root if not defined"""
-        if self._root is None and type(value) is Task:
+        if self._root is None and isinstance(value, Task):
             self._root =value
 
     def add_dependant(self, child):
         """Adds a dependant to root"""
-        if self._root is not None and type(child) is Task:
+        if self._root is not None and isinstance(child, Task):
             self._root.dependants.append(child)
 
     def add_prerequisite(self, parent):
         """Add a prerequisite to root"""
-        if self._root is not None and type(parent) is Task:
+        if self._root is not None and isinstance(parent, Task):
             self._root.prerequisites.append(parent)
