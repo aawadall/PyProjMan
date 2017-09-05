@@ -1,1 +1,21 @@
-TODO
+- [ ] Basic Application Skeleton feature #1
+- [ ] Define a Task class  #2 
+- [ ] Project Statistics #3 
+- [ ] Calculate Dates/Duration from one another feature #4
+- [ ] Basic Attribute Validators #5
+- [ ] User Friendly Task ID #6
+- [ ] Timekeeping Object #7 
+- [ ] User Object #8
+- [ ] Integrate with Twitter #9
+- [ ] Store Task Tree in File #10
+- [ ] Drag and Drop #11 
+- [ ] Create UI Object #12
+- [ ] Create API Class #13
+- [ ] Command line User Interface #14
+- [ ] Adding a prerequisite not implying dependant #15
+- [ ] Duplicate dependants #16
+- [ ] Duplicate prerequisites #17 
+- [ ] Track difference between planned and actual duration #18
+- [ ] Identify Tasks #19 
+- [ ] Add cost information #20 
+- [ ] Implement Uncle Bob's Estimation Technique #21 
