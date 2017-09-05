@@ -10,30 +10,41 @@ I intend to release this project in small cycles (not decided yet, how frequent)
 First few releases might not be stable, but hopefully by the first release after alpha and beta releases it should be usable.
 
 ### [Alpha Release][2]
+
 Estimated Release Date | Sept 17' 2017
 ----------------------:|--------------:
 Estimated Effort       | 2 man weeks
 
 #### Features & Specs
 
-[x] Basic Application Skeleton \
-[ ] Commandline user interface \
-[x] Define the **_task_**, as basic building block of the project\
-[ ] Tasks defined in runtime without saving them \
-[ ] Calculate Project statistics, in a text report\ 
+[x] Basic Application Skeleton 
+
+[ ] Commandline user interface 
+
+[x] Define the **_task_**, as basic building block of the project
+
+[ ] Tasks defined in runtime without saving them 
+
+[ ] Calculate Project statistics, in a text report
+
 [x] Build unit tests for each feature
  
 ### [Beta Release][3]
+
 Estimated Release Date | Oct 1' 2017
 ----------------------:|--------------:
 Estimated Effort       | 2 man weeks
 
 #### Features
 
-[ ] Fix known issues\
-[ ] Basic attributes validation\
-[ ] Define a license\
-[ ] Define a user friendly task ID \
+[ ] Fix known issues
+
+[ ] Basic attributes validation
+
+[ ] Define a license
+
+[ ] Define a user friendly task ID 
+
 [ ] Define a timekeeping object
 
 ## Contribution 
