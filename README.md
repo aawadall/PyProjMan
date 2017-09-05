@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e78e070a51a84885b5d9af3815923669)](https://www.codacy.com/app/aawadall/PyProjMan?utm_source=github.com&utm_medium=referral&utm_content=aawadall/PyProjMan&utm_campaign=badger)
+
 [![BCH compliance](https://bettercodehub.com/edge/badge/aawadall/PyProjMan?branch=master)](https://bettercodehub.com/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e78e070a51a84885b5d9af3815923669)](https://www.codacy.com/app/aawadall/PyProjMan?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aawadall/PyProjMan&amp;utm_campaign=Badge_Grade)
 # PyProjMan
