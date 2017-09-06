@@ -134,14 +134,15 @@ Actual:
         for dependant in self.dependants:
             print("{} - {}".format(dependant.id, dependant.name))
 
+    @classmethod
     def project_stats(self):
-        """Reports overall project statistics starting from current node"""
+        """Reports overall report statistics"""
         # Overall Start, Overall End, Overall Duration, Overall Completed
         # List Prerequisites
         # Task Name, Start, End, Completed
         # List Dependants
         # Task Name, Start, End, Completed
-        return "Not Imeplemented"
+        return "Not Implemented yet"
 
     def crawl_up(self):
         """Search all parent tasks"""

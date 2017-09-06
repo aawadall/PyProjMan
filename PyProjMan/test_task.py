@@ -2,8 +2,6 @@
 from unittest import TestCase
 from PyProjMan.task import Task
 
-import datetime
-
 
 class TestTaskParameters(TestCase):
     """Test Fields of Task Object"""
