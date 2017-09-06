@@ -145,7 +145,7 @@ Actual:
     def crawl_up(self):
         """Search all parent tasks"""
         parents = []
-        if self._prerequisites.__len__() != 0:
+        if len(self._prerequisites) != 0:
             for prerequisite in self._prerequisites:
                 parents.extend(prerequisite.crawl_up())
 
@@ -154,7 +154,7 @@ Actual:
     def crawl_down(self):
         """Search all children tasks"""
         children = []
-        if self._dependants.__len__() != 0:
+        if len(self._dependants) != 0:
             for child in self._dependants:
                 children.extend(child.crawl_down())
         return list(set(children))

@@ -56,7 +56,7 @@ class TestTask(TestCase):
         parent = Task("Parent Task")
         root.append_prerequisite(parent)
         root.append_prerequisite(parent)
-        self.assertNotEqual(2, root.prerequisites.__len__())
+        self.assertNotEqual(2, len(root.prerequisites))
 
     def test_dependants(self):
         """
@@ -104,7 +104,7 @@ class TestTask(TestCase):
         child = Task("Child Task")
         root.append_dependant(child)
         root.append_dependant(child)
-        self.assertNotEqual(2, root.dependants.__len__())
+        self.assertNotEqual(2, len(root.dependants))
 
     def test_planned_start(self):
         """Create a task, define a _date/time, assign it to planned start _date"""

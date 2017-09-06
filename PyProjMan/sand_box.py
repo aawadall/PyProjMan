@@ -33,7 +33,7 @@ c_up = root.crawl_up()
 
 root.report()
 l1a.report()
-print(c_up.__len__())
+print(len(c_up))
 print("All Prerequisites")
 for parent in c_up:
     print(parent.id)
