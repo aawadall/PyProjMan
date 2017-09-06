@@ -2,6 +2,8 @@
 [![BCH compliance](https://bettercodehub.com/edge/badge/aawadall/PyProjMan?branch=master)](https://bettercodehub.com/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e78e070a51a84885b5d9af3815923669)](https://www.codacy.com/app/aawadall/PyProjMan?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aawadall/PyProjMan&amp;utm_campaign=Badge_Grade)
 [![codebeat badge](https://codebeat.co/badges/32726467-44fd-4686-b768-60335e03a1a1)](https://codebeat.co/projects/github-com-aawadall-pyprojman-master)
+[![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/security.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan)
+[![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/quality.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan)
 # PyProjMan
 Commandline Based Project Management Application, written in Python. 
 
