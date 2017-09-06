@@ -41,10 +41,10 @@ Estimated Effort       | 2 man weeks
 - [x] Build unit tests for each feature 
  
 
-[![badge][4]]
+
 
 
 [1]: https://github.com/aawadall/PyProjMan/blob/master/CONTRIBUTING.md
 [2]: https://github.com/aawadall/PyProjMan/milestone/1
 [3]: https://github.com/aawadall/PyProjMan/milestone/2
-[4]: https://codebeat.co/badges/32726467-44fd-4686-b768-60335e03a1a1
+
