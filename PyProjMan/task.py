@@ -1,20 +1,20 @@
 import uuid
+import PyProjMan.TimeElement
 
 # Building Block
+from PyProjMan import TimeElement
+
+
 class Task:
     """Building block of a project plan"""
     type = "Task Element"
 
     def __init__(self,name=None):
         # Actual Task Metrics
-        self._actual_start = None  # Start Date/Time
-        self._actual_end = None  # End Date/Time
-        self._actual_duration = None  # Duration
+        self._actual = None
 
         # Planned Task Metrics
-        self._planned_duration = None  # Duration
-        self._planned_start = None  # Start Date/Time
-        self._planned_end = None  # End Date/Time
+        self._planned = None
 
         self._pct_complete = 0.0  # Percentage Completed
 
@@ -25,31 +25,6 @@ class Task:
 
     # Task methods
 
-    @staticmethod
-    def calculate_end_date(date1, duration):
-        try:
-            return date1 + duration
-        except TypeError:
-            return  None
-
-    @staticmethod
-    def calculate_duration_from_date(date1, date2):
-        try:
-            if date2 > date1:
-                return date2 - date1
-            return None
-        except TypeError:
-            return None
-
-    @staticmethod
-    def calculate_start_date(date2, duration):
-        try:
-            return date2 - duration
-        except TypeError:
-            return  None
-
-    # Tasks should have
-    # ID, Read only property generated at construction
     @property
     def id(self):
         """Unique Task ID
@@ -86,8 +61,6 @@ class Task:
             value.append_dependant(self)
         return self._prerequisites
 
-
-
     # Dependants
     @property
     def dependants(self):
@@ -104,99 +77,24 @@ class Task:
             value.append_prerequisite(self)
         return self._dependants
 
-
     # Planned
     # Starting
     @property
-    def planned_start(self):
-        """Task planned start date/time"""
-        return self._planned_start
+    def planned(self):
+        """Task planned timings"""
+        return self._planned
 
-    @planned_start.setter
+    @planned.setter
     def planned_start(self, value):
-        self._planned_start = value
-        # Calculate Rest of components from this and a known one
-        if self._planned_duration is not None:
-            self._planned_end = Task.calculate_end_date(date1= self._planned_start, duration= self.planned_duration)
-        elif self._planned_end is not None:
-            self._planned_duration = Task.calculate_duration_from_date(date1= self.planned_start,date2= self.planned_end)
-
-    # Ending
+        self._planned = TimeElement.assign_type(value, TimeElement, TimeElement)
     @property
-    def planned_end(self):
-        """Task planned end date/time"""
-        return self._planned_end
-
-    @planned_end.setter
-    def planned_end(self, value):
-        self._planned_end = value
-        # Calculate Rest of components from this and a known one
-        if self._planned_duration is not None:
-            self._planned_start = Task.calculate_start_date(date2= self._planned_end ,duration= self.planned_duration)
-        elif self._planned_start is not None:
-            self._planned_duration = Task.calculate_duration_from_date(date1= self.planned_start,date2= self.planned_end)
-
-    # Duration
-    @property
-    def planned_duration(self):
-        """Planned task duration"""
-        return self._planned_duration
-
-    @planned_duration.setter
-    def planned_duration(self, value):
-        self._planned_duration = value
-
-        # Calculate Rest of components from this and a known one
-        if self._planned_start is not None:
-            self.planned_end = Task.calculate_end_date(date1= self._planned_start ,duration=self._planned_duration)
-        elif self._planned_end is not None:
-            self.planned_start = Task.calculate_start_date(date2= self._planned_end,duration=  self._planned_duration)
-
-    # Actual
-    # Starting
-    @property
-    def actual_start(self):
+    def actual(self):
         """Task actual start date/time"""
-        return self._actual_start
+        return self._actual
 
-    @actual_start.setter
+    @actual.setter
     def actual_start(self, value):
-        self._actual_start = value
-        # Calculate Rest of components from this and a known one
-        if self._actual_duration is not None:
-            self.actual_end = Task.calculate_end_date(self._actual_start , self.actual_duration)
-        elif self._actual_end is not None:
-            self.actual_duration = Task.calculate_duration_from_date(self.actual_start, self.actual_end)
-
-    # Ending
-    @property
-    def actual_end(self):
-        """Task actual end date/time"""
-        return self._actual_end
-
-    @actual_end.setter
-    def actual_end(self, value):
-        self._actual_end = value
-        # Calculate Rest of components from this and a known one
-        if self._actual_start is not None:
-            self._actual_duration = Task.calculate_duration_from_date(self._actual_start , self.actual_end)
-        elif self._actual_duration is not None:
-            self._actual_start = Task.calculate_start_date(self.actual_end, self.actual_duration)
-
-    # Duration
-    @property
-    def actual_duration(self):
-        """Actual task duration"""
-        return self._actual_duration
-
-    @actual_duration.setter
-    def actual_duration(self, value):
-        self._actual_duration = value
-        # Calculate Rest of components from this and a known one
-        if self._actual_start is not None:
-            self.actual_end = Task.calculate_end_date(self._actual_start , self.actual_duration)
-        elif self._actual_end is not None:
-            self.actual_start = Task.calculate_start_date(self.actual_end, self.actual_duration)
+        self._actual = TimeElement.assign_type(value, TimeElement, TimeElement)
 
     # Status
     @property
@@ -224,8 +122,8 @@ Actual:
     Start   : {}
     End     : {}
     Duration: {}
-        """.format(self.planned_start, self.planned_end, self.planned_duration,
-                   self.actual_start, self.actual_end, self.actual_duration))
+        """.format(self.planned.start, self.planned.end , self.planned.duration,
+                   self.actual.start, self.actual.end, self.actual.duration))
 
         # List Prerequisite Tasks
         print("Prerequisite Tasks")
