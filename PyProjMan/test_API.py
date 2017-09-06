@@ -4,7 +4,8 @@ from PyProjMan.api import API
 from PyProjMan.task import Task
 
 
-class TestAPI(TestCase):
+class TestAPIInit(TestCase):
+    """Test Initialization related API Calls"""
     # Initialization
     def test_init_blank(self):
         """Test instantiating API object with no root Task"""
@@ -18,6 +19,9 @@ class TestAPI(TestCase):
         api = API(task)
         self.assertEqual(task, api.root)
 
+
+class TestAPITaskMgmt(TestCase):
+    """Test Task Management API Calls"""
     # Task Management
     def test_create_root_task(self):
         """Test creating root task in an API object with no root task"""
@@ -43,6 +47,31 @@ class TestAPI(TestCase):
 
         self.assertTrue(api.root == task and api.root != task2)
 
+    # Completed
+    def test_completed_define(self):
+        """Test defining a completed percentage of a task"""
+        self.fail("Not implemented")
+
+    def test_completed_increase(self):
+        """Test increasing a completed percentage of a task"""
+        self.fail("Not implemented")
+
+    def test_completed_decrease(self):
+        """Test decreasing a completed percentage of a task"""
+        self.fail("Not implemented")
+
+    # Assignee
+    def test_assign_assignee(self):
+        """Test defining assignee to a task"""
+        self.fail("Not implemented")
+
+    def test_un_assign_assignee(self):
+        """Test un-assigning a task"""
+        self.fail("Not implemented")
+
+
+class TestAPILists(TestCase):
+    """Test Lists related API Calls"""
     # Dependants & Prerequisites
     def test_adding_dependant_task(self):
         """Test appending a dependant task to root object"""
@@ -114,11 +143,17 @@ class TestAPI(TestCase):
         """Test deleting a prerequisite task with prerequisites of its own"""
         self.fail("Not implemented")
 
+
+class TestAPISearch(TestCase):
+    """Test Search Related API Calls"""
     # Searching
     def test_find_task_by_name(self):
         """Test searching for a task by its name"""
         self.fail("Not implemented")
 
+
+class TestAPIReport(TestCase):
+    """Test Reporting related API Calls"""
     # Reporting
     def test_project_summary(self):
         """Test project statistics calculation"""
@@ -128,80 +163,13 @@ class TestAPI(TestCase):
         """Test changing task name"""
         self.fail("Not implemented")
 
-    # Actual
-    # Start
-    def test_define_actual_start(self):
-        """Test defining actual start date/time for a task"""
+
+class TestAPITimings(TestCase):
+    """Test Timings related API Calls"""
+    def test_planned(self):
+        """Test planned timings"""
         self.fail("Not implemented")
 
-    def test_calculated_actual_start(self):
-        """Test calculated task's actual start from actual end and actual duration"""
-        self.fail("Not implemented")
-
-    # End
-    def test_define_actual_end(self):
-        """Test defining actual end date/time for a task"""
-        self.fail("Not implemented")
-
-    def test_calculated_actual_end(self):
-        """Test calculated task's actual end from actual start and actual duration"""
-        self.fail("Not implemented")
-
-    # Duration
-    def test_define_actual_duration(self):
-        """Test defining actual task duration"""
-        self.fail("Not implemented")
-
-    def test_calculated_actual_duration(self):
-        """Test calculated task's actual duration from actual start and actual end"""
-        self.fail("Not implemented")
-
-    # Planned
-    # Start
-    def test_define_planned_start(self):
-        """Test defining planned start date/time for a task"""
-        self.fail("Not implemented")
-
-    def test_calculated_planned_start(self):
-        """Test calculated task's planned start from planned end and planned duration"""
-        self.fail("Not implemented")
-
-    # End
-    def test_define_planned_end(self):
-        """Test defining planned end date/time for a task"""
-        self.fail("Not implemented")
-
-    def test_calculated_planned_end(self):
-        """Test calculated task's planned end from planned start and planned duration"""
-        self.fail("Not implemented")
-
-    # Duration
-    def test_define_planned_duration(self):
-        """Test defining planned task duration"""
-        self.fail("Not implemented")
-
-    def test_calculated_planned_duration(self):
-        """Test calculated task's planned duration from planned start and planned end"""
-        self.fail("Not implemented")
-
-    # Completed
-    def test_completed_define(self):
-        """Test defining a completed percentage of a task"""
-        self.fail("Not implemented")
-
-    def test_completed_increase(self):
-        """Test increasing a completed percentage of a task"""
-        self.fail("Not implemented")
-
-    def test_completed_decrease(self):
-        """Test decreasing a completed percentage of a task"""
-        self.fail("Not implemented")
-
-    # Assignee
-    def test_assign_assignee(self):
-        """Test defining assignee to a task"""
-        self.fail("Not implemented")
-
-    def test_un_assign_assignee(self):
-        """Test un-assigning a task"""
+    def test_Actual(self):
+        """Test actual timings"""
         self.fail("Not implemented")
