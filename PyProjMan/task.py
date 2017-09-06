@@ -133,30 +133,3 @@ Actual:
         print("Dependant Tasks")
         for dependant in self.dependants:
             print("{} - {}".format(dependant.id, dependant.name))
-
-    @classmethod
-    def project_stats(self):
-        """Reports overall report statistics"""
-        # Overall Start, Overall End, Overall Duration, Overall Completed
-        # List Prerequisites
-        # Task Name, Start, End, Completed
-        # List Dependants
-        # Task Name, Start, End, Completed
-        return "Not Implemented yet"
-
-    def crawl_up(self):
-        """Search all parent tasks"""
-        parents = []
-        if len(self._prerequisites) != 0:
-            for prerequisite in self._prerequisites:
-                parents.extend(prerequisite.crawl_up())
-
-        return list(set(parents))
-
-    def crawl_down(self):
-        """Search all children tasks"""
-        children = []
-        if len(self._dependants) != 0:
-            for child in self._dependants:
-                children.extend(child.crawl_down())
-        return list(set(children))
