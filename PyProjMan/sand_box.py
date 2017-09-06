@@ -1,8 +1,7 @@
 # Scrap Paper File to try different Things
 
 # Test How to build a task variable
-from task import Task
-import datetime
+from PyProjMan.task import Task
 
 root = Task("Root Task")
 
@@ -32,17 +31,9 @@ l2a.append_prerequisite(l3b)
 
 c_up = root.crawl_up()
 
-#t.prerequisites.append(parent1)
-#t.prerequisites.append(parent2)
-
-#t.dependants.append(child1)
-#t.dependants.append(child2)
-#t.dependants.append(child3)
-
 root.report()
 l1a.report()
 print(c_up.__len__())
-print("All Prerequisites" )
+print("All Prerequisites")
 for parent in c_up:
     print(parent.id)
-#print("Task Name: {} , that is {} completed".format(t.name,t.completed))

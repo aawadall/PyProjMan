@@ -56,7 +56,7 @@ class TestTask(TestCase):
         parent = Task("Parent Task")
         root.append_prerequisite(parent)
         root.append_prerequisite(parent)
-        self.assertNotEqual(2,root.prerequisites.__len__())
+        self.assertNotEqual(2, root.prerequisites.__len__())
 
     def test_dependants(self):
         """
@@ -73,7 +73,10 @@ class TestTask(TestCase):
         self.assertEqual(dependants, target.dependants)
 
     def test_cyclic_dependencay(self):
-        """Test case of a cyclic dependency, i.e. a Task depends on itself, or a task has both prerequisite and child the same"""
+        """
+        Test case of a cyclic dependency, i.e. a Task depends on itself,
+        or a task has both prerequisite and child the same
+        """
         self.fail("Not implemented ")
 
     def test_parent_child_upstream(self):
@@ -101,7 +104,7 @@ class TestTask(TestCase):
         child = Task("Child Task")
         root.append_dependant(child)
         root.append_dependant(child)
-        self.assertNotEqual(2,root.dependants.__len__())
+        self.assertNotEqual(2, root.dependants.__len__())
 
     def test_planned_start(self):
         """Create a task, define a _date/time, assign it to planned start _date"""
@@ -182,14 +185,14 @@ class TestTask(TestCase):
 
         c_up = root.crawl_up()
 
-        self.assertIn(l1a,c_up)
-        self.assertIn(l1b,c_up)
-        self.assertIn(l2a,c_up)
-        self.assertIn(l2b,c_up)
-        self.assertIn(l2c,c_up)
-        self.assertIn(l2d,c_up)
-        self.assertIn(l3a,c_up)
-        self.assertIn(l3b,c_up)
+        self.assertIn(l1a, c_up)
+        self.assertIn(l1b, c_up)
+        self.assertIn(l2a, c_up)
+        self.assertIn(l2b, c_up)
+        self.assertIn(l2c, c_up)
+        self.assertIn(l2d, c_up)
+        self.assertIn(l3a, c_up)
+        self.assertIn(l3b, c_up)
 
     def test_crawl_down(self):
         """Test Crawl Down a Task"""

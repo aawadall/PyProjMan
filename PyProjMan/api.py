@@ -3,8 +3,11 @@ from PyProjMan.task import Task
 
 
 class API:
-    """API Class, is used as a middle layer between core classes and external world, including Text based UI, Web App, and external systems"""
-    def __init__(self,root: Task=None):
+    """
+    API Class, is used as a middle layer between core classes and external world,
+    including Text based UI, Web App, and external systems
+    """
+    def __init__(self, root: Task=None):
         """Creates an API instance for the root task
         :type root: Task
         :param root:
@@ -17,10 +20,10 @@ class API:
         return self._root
 
     @root.setter
-    def root(self,value):
+    def root(self, value):
         """Set Root if not defined"""
         if self._root is None and isinstance(value, Task):
-            self._root =value
+            self._root = value
 
     def add_dependant(self, child):
         """Adds a dependant to root"""

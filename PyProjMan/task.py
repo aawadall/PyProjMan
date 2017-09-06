@@ -1,5 +1,4 @@
 import uuid
-import PyProjMan.TimeElement
 
 # Building Block
 from PyProjMan import TimeElement
@@ -9,7 +8,7 @@ class Task:
     """Building block of a project plan"""
     type = "Task Element"
 
-    def __init__(self,name=None):
+    def __init__(self, name=None):
         # Actual Task Metrics
         self._actual = None
 
@@ -85,15 +84,16 @@ class Task:
         return self._planned
 
     @planned.setter
-    def planned_start(self, value):
+    def planned(self, value):
         self._planned = TimeElement.assign_type(value, TimeElement, TimeElement)
+
     @property
     def actual(self):
         """Task actual start date/time"""
         return self._actual
 
     @actual.setter
-    def actual_start(self, value):
+    def actual(self, value):
         self._actual = TimeElement.assign_type(value, TimeElement, TimeElement)
 
     # Status
@@ -122,7 +122,7 @@ Actual:
     Start   : {}
     End     : {}
     Duration: {}
-        """.format(self.planned.start, self.planned.end , self.planned.duration,
+        """.format(self.planned.start, self.planned.end, self.planned.duration,
                    self.actual.start, self.actual.end, self.actual.duration))
 
         # List Prerequisite Tasks
@@ -142,11 +142,10 @@ Actual:
         # List Dependants
         # Task Name, Start, End, Completed
 
-
     def crawl_up(self):
         """Search all parent tasks"""
         parents = []
-        if self._prerequisites.__len__()  != 0:
+        if self._prerequisites.__len__() != 0:
             for prerequisite in self._prerequisites:
                 parents.extend(prerequisite.crawl_up())
 
@@ -155,7 +154,7 @@ Actual:
     def crawl_down(self):
         """Search all children tasks"""
         children = []
-        if self._dependants.__len__()  != 0:
+        if self._dependants.__len__() != 0:
             for child in self._dependants:
                 children.extend(child.crawl_down())
         return list(set(children))

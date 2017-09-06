@@ -11,19 +11,19 @@ Anything else, will not require specific technical background.
 We need help in the following areas:
 
 ### Software Design
-This project at its early stages, and we need to design classes, interfaces, methods, etc. to make it fly. You can have a look at the [documents folder][1] to get familiar with the project design, and what it is entended to do. 
+This project at its early stages, and we need to design classes, interfaces, methods, etc. to make it fly. You can have a look at the [documents folder][1] to get familiar with the project design, and what it is intended to do.
 If you found something that needs change, please log an [issue][2] and label it **design**. Or you can submit a pull request with your proposed changes. I promise to review it ASAP.
 
 ### Development
 This project is mostly written in Python. You can use [PyCharm][5] to do the required development.
-There are two releases (defined as milestones) so far scheduled at [mid September][3] and [Early October][4] 2017, with issues (bugs, or features) assigned to each relase. You can read the issue, figure how to implement or fix it, and submit a pull request with the proposed change.
+There are two releases (defined as milestones) so far scheduled at [mid September][3] and [Early October][4] 2017, with issues (bugs, or features) assigned to each release. You can read the issue, figure how to implement or fix it, and submit a pull request with the proposed change.
 Before you submit the change, make sure you execute and existing unit test for this feature, and if not present, please write that unit test. Thank you.
 
 ### Reporting Issues
 You are welcome to play with the application, find bugs, or missing features. Please report any features or bugs in the [issue log][2], and assign it either **bug** or **feature** labels. The more issues we get, the richer the application would be.
 
 ### Graphics & UI Design
-Currently, this application is entierly text based, but it should not remain this way. If you can propose UI ideas, icons, or even web page design, please contact me via email @ aawadall@ualberta.ca
+Currently, this application is entirely text based, but it should not remain this way. If you can propose UI ideas, icons, or even web page design, please contact me via email @ aawadall@ualberta.ca
 
 ### Documentation
 Clean code requires proper documentation. Pull requests are welcome to different types of documentation:

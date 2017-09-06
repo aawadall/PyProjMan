@@ -1,5 +1,5 @@
 ## Project Description
-A simple (for the timebeing) project management tool, designed for developers. 
+A simple (for the time-being) project management tool, designed for developers.
 
 _I might need to migrate this document into GitHub issues_
 

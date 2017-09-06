@@ -9,7 +9,7 @@ class TestAPI(TestCase):
     def test_init_blank(self):
         """Test instantiating API object with no root Task"""
         api = API()
-        self.assertIsNone(api.root,api.root)
+        self.assertIsNone(api.root, api.root)
 
     def test_init_existing(self):
         """Test instantiating API object with an existing root Task"""
@@ -56,7 +56,7 @@ class TestAPI(TestCase):
 
         api.add_dependant(child)
 
-        self.assertIn(child,api.root.dependants)
+        self.assertIn(child, api.root.dependants)
 
     def test_adding_bad_dependant_task(self):
         """Test appending a dependant with type other than task to root object"""
@@ -69,7 +69,7 @@ class TestAPI(TestCase):
 
         api.add_dependant(child)
 
-        self.assertNotIn(child,api.root.dependants)
+        self.assertNotIn(child, api.root.dependants)
 
     def test_adding_prerequisite_task(self):
         """Test appending a prerequisite task to root object"""
@@ -83,7 +83,7 @@ class TestAPI(TestCase):
 
         api.add_prerequisite(parent)
 
-        self.assertIn(parent,api.root.prerequisites)
+        self.assertIn(parent, api.root.prerequisites)
 
     def test_adding_bad_prerequisite_task(self):
         """Test appending a bad prerequisite task to root object"""
@@ -92,11 +92,11 @@ class TestAPI(TestCase):
 
         api = API(task)
 
-        parent =  "Child Task"
+        parent = "Child Task"
 
         api.add_prerequisite(parent)
 
-        self.assertNotIn(parent,api.root.prerequisites)
+        self.assertNotIn(parent, api.root.prerequisites)
 
     def test_deleting_dependant_task(self):
         """Test deleting a dependant task"""
@@ -113,10 +113,12 @@ class TestAPI(TestCase):
     def test_deleting_cascaded_prerequisites(self):
         """Test deleting a prerequisite task with prerequisites of its own"""
         self.fail("Not implemented")
+
     # Searching
     def test_find_task_by_name(self):
         """Test searching for a task by its name"""
         self.fail("Not implemented")
+
     # Reporting
     def test_project_summary(self):
         """Test project statistics calculation"""
@@ -194,7 +196,6 @@ class TestAPI(TestCase):
     def test_completed_decrease(self):
         """Test decreasing a completed percentage of a task"""
         self.fail("Not implemented")
-
 
     # Assignee
     def test_assign_assignee(self):
