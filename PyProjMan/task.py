@@ -56,7 +56,7 @@ class Task:
         """Append to prerequisites array"""
         if value not in self._prerequisites:
 
-            self._prerequisites = self._prerequisites + [value]
+            self._prerequisites.append(value)
             value.append_dependant(self)
         return self._prerequisites
 
@@ -72,7 +72,7 @@ class Task:
 
     def append_dependant(self, value):
         if value not in self._dependants:
-            self._dependants = self._dependants + [value]
+            self._dependants.append(value)
             value.append_prerequisite(self)
         return self._dependants
 
