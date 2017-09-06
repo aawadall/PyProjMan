@@ -14,8 +14,8 @@ class TestTask(TestCase):
 
     def test_name(self):
         """Test Task Name Property Setter and Getter"""
-        t = Task()
         expected = 'Task'
+        t = Task(expected)
         t.name = expected
         self.assertEqual(t.name, expected, t.name)
 
