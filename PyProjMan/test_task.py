@@ -6,53 +6,6 @@ import datetime
 
 
 class TestTask(TestCase):
-    def test_calculate_end_date(self):
-        """Happy Path Date from duration"""
-        baseline_date = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
-        duration = datetime.timedelta(days=1, hours=1, minutes=10)
-        expected = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
-        self.assertEqual(Task.calculate_end_date(baseline_date, duration=duration), expected)
-
-    def test_calculate_end_date_dur_exceptions(self):
-        """Exception path,when duration is wrong data type"""
-        baseline_date = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
-        duration = 1
-
-        self.assertEqual(None, Task.calculate_end_date(baseline_date, duration=duration))
-
-    def test_calculate_end_date_date_exceptions(self):
-        """Exception path,when date is wrong data type"""
-        baseline_date = 1
-        duration = datetime.timedelta(days=1, hours=1, minutes=10)
-
-        self.assertEqual(None, Task.calculate_end_date(baseline_date, duration=duration))
-
-    def test_calculate_duration_from_date(self):
-        """Happy Path, Calculating Duration from Start and End Dates"""
-        baseline_date = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
-        end_date = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
-        expected = datetime.timedelta(days=1, hours=1, minutes=10)
-        self.assertEqual(Task.calculate_duration_from_date(date1=baseline_date, date2=end_date), expected)
-
-    def test_calculate_duration_from_date_ex_type_1_err(self):
-        """Exception Path, First Argument, wrong data type"""
-        baseline_date = 1
-        end_date = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
-        self.assertEqual(None, Task.calculate_duration_from_date(date1=baseline_date, date2=end_date))
-
-    def test_calculate_duration_from_date_ex_type_2_err(self):
-        """Exception Path, Second Argument, wrong data type"""
-        baseline_date = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
-        end_date = 1
-        self.assertEqual(None, Task.calculate_duration_from_date(date1=baseline_date, date2=end_date))
-
-    def test_calculate_duration_from_date_ex_date_2_less_t_date_1(self):
-        """Exception Path, Second date smaller than first date"""
-        baseline_date = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
-        end_date = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
-
-        self.assertEqual(Task.calculate_duration_from_date(date1=baseline_date, date2=end_date), None)
-
     def test_id(self):
         """Check if Task ID has UUID Version 4"""
         t = Task()
@@ -65,6 +18,12 @@ class TestTask(TestCase):
         expected = 'Task'
         t.name = expected
         self.assertEqual(t.name, expected, t.name)
+
+    def test_planned_dates(self):
+        self.fail("Not implemented")
+
+    def test_actual_dates(self):
+        self.fail("Not implemented")
 
     def test_prerequisites(self):
         """
@@ -192,101 +151,6 @@ class TestTask(TestCase):
         expected = 0.5
         t.completed = expected
         self.assertEqual(expected, t.completed)
-
-        # def test_report(self):
-        #     """Create a set of tasks, link them, assign data, and report it"""
-        #     self.fail("Not implemented yet")
-
-        # def test_factory_method(self):
-        #     """Create tasks using a static factory method"""
-        #     self.fail("Not implemented yet ")
-        #
-        # def test_t_ui(self):
-        #     """User Interface, using text"""
-        #     self.fail("Not Implemented Yet")
-
-
-
-    def test_calculate_start_date(self):
-        """Happy Path Date from duration"""
-        expected = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
-        duration = datetime.timedelta(days=1, hours=1, minutes=10)
-        baseline_date = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
-        self.assertEqual(Task.calculate_start_date(baseline_date, duration=duration), expected)
-
-    def test_calculate_start_date_dur_exceptions(self):
-        """Exception path,when duration is wrong data type"""
-        baseline_date = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
-        duration = 1
-
-        self.assertEqual(None, Task.calculate_start_date(baseline_date, duration=duration))
-
-    def test_calculate_start_date_date_exceptions(self):
-        """Exception path,when date is wrong data type"""
-        baseline_date = 1
-        duration = datetime.timedelta(days=1, hours=1, minutes=10)
-
-        self.assertEqual(None, Task.calculate_start_date(baseline_date, duration=duration))
-
-    def test_planned_end_from_others(self):
-        """Calculate Planned End Date from Start Date and Duration"""
-        t = Task()
-        start    = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
-        end      = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
-        duration = datetime.timedelta(days=1, hours=1, minutes=10)
-        t.planned_start = start
-        t.planned_duration = duration
-        self.assertEqual(end, t.planned_end)
-
-    def test_planned_duration_from_others(self):
-        """Calculate Planned Duration from Start Date and End Date"""
-        t = Task()
-        start    = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
-        end      = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
-        duration = datetime.timedelta(days=1, hours=1, minutes=10)
-        t.planned_start = start
-        t.planned_end   = end
-        self.assertEqual(duration, t.planned_duration)
-
-    def test_planned_start_from_others(self):
-        """Calculate Planned Start Date from End Date and Duration"""
-        t = Task()
-        start    = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
-        end      = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
-        duration = datetime.timedelta(days=1, hours=1, minutes=10)
-        t.planned_end = end
-        t.planned_duration = duration
-        self.assertEqual(start, t.planned_start)
-
-    def test_actual_end_from_others(self):
-        """Calculate Actual End Date from Start Date and Duration"""
-        t = Task()
-        start    = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
-        end      = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
-        duration = datetime.timedelta(days=1, hours=1, minutes=10)
-        t.actual_start = start
-        t.actual_duration = duration
-        self.assertEqual(end, t.actual_end)
-
-    def test_actual_duration_from_others(self):
-        """Calculate Actual Duration  from Start Date and End Date"""
-        t = Task()
-        start    = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
-        end      = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
-        duration = datetime.timedelta(days=1, hours=1, minutes=10)
-        t.actual_start = start
-        t.actual_end = end
-        self.assertEqual(duration, t.actual_duration)
-
-    def test_actual_start_from_others(self):
-        """Calculate Actual Start Date from End Date and Duration"""
-        t = Task()
-        start    = datetime.datetime(year=2017, month=10, day=1, hour=10, minute=15)
-        end      = datetime.datetime(year=2017, month=10, day=2, hour=11, minute=25)
-        duration = datetime.timedelta(days=1, hours=1, minutes=10)
-        t.actual_end = end
-        t.actual_duration = duration
-        self.assertEqual(start, t.actual_start)
 
     def test_crawl_up(self):
         """Test Crawl Up a Task"""
