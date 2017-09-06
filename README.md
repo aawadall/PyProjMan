@@ -1,10 +1,4 @@
 
-[![BCH compliance](https://bettercodehub.com/edge/badge/aawadall/PyProjMan?branch=master)](https://bettercodehub.com/)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e78e070a51a84885b5d9af3815923669)](https://www.codacy.com/app/aawadall/PyProjMan?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aawadall/PyProjMan&amp;utm_campaign=Badge_Grade)
-[![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/security.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan)
-[![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/quality.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan)
-[![codebeat badge](https://codebeat.co/badges/32726467-44fd-4686-b768-60335e03a1a1)](https://codebeat.co/projects/github-com-aawadall-pyprojman-master)
-
 # PyProjMan
 Commandline Based Project Management Application, written in Python. 
 
@@ -40,10 +34,16 @@ Estimated Effort       | 2 man weeks
 - [ ] Calculate Project statistics, in a text report 
 - [x] Build unit tests for each feature 
  
-
+#### Build Status 
+* Better Code [![BCH compliance](https://bettercodehub.com/edge/badge/aawadall/PyProjMan?branch=master)](https://bettercodehub.com/)
+* Codacy [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e78e070a51a84885b5d9af3815923669)](https://www.codacy.com/app/aawadall/PyProjMan?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aawadall/PyProjMan&amp;utm_campaign=Badge_Grade)
+* Kiuwan [![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/security.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan)
+[![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/quality.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan)
+* Code Beat [![codebeat badge](https://codebeat.co/badges/32726467-44fd-4686-b768-60335e03a1a1)](https://codebeat.co/projects/github-com-aawadall-pyprojman-master) _**There is a bug in showing current status**_  backup shield : [![backup](https://codebeat.co/assets/svg/badges/A-398b39-669406e9e1b136187b91af587d4092b0160370f271f66a651f444b990c2730e9.svg)]
 
 
 
 [1]: https://github.com/aawadall/PyProjMan/blob/master/CONTRIBUTING.md
 [2]: https://github.com/aawadall/PyProjMan/milestone/1
 [3]: https://github.com/aawadall/PyProjMan/milestone/2
+
