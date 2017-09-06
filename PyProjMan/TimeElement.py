@@ -57,11 +57,8 @@ class TimeElement:
 def assign_type(source, type1, type2):
     """Check class of source, if matches passed types, then assign destination the value of source"""
     if isinstance(source, type1) or isinstance(source, type2):
-        destination = source
-    else:
-        destination = None
-    return destination
-
+        return source
+    return None
 
 def calculate_dates_and_durations(start=None, end=None, duration=None):
     """
@@ -73,11 +70,8 @@ def calculate_dates_and_durations(start=None, end=None, duration=None):
     """
     if start is not None and duration is not None:
         end = start + duration
-
     if start is not None and end is not None:
         duration = end - start
-
     if end is not None and duration is not None:
         start = end - duration
-
     return start, end, duration
