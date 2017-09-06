@@ -114,11 +114,11 @@ class Task:
         print("{} % Completed ".format(self.completed*100))
         #  List Planned/Actual Time Metrics
         print("""
-Planned:    
-    Start   : {}  
-    End     : {}  
+Planned:
+    Start   : {}
+    End     : {}
     Duration: {}
-Actual:     
+Actual:
     Start   : {}
     End     : {}
     Duration: {}
@@ -141,6 +141,7 @@ Actual:
         # Task Name, Start, End, Completed
         # List Dependants
         # Task Name, Start, End, Completed
+        return "Not Imeplemented"
 
     def crawl_up(self):
         """Search all parent tasks"""

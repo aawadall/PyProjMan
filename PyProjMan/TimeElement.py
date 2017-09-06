@@ -4,7 +4,9 @@ import datetime
 class TimeElement:
     """
     Time Element, is a repeated unit used in the Task Object
-    It can be actual time, estimated time, best case estimated time, worst case estimated time or anything else
+    It can be actual time, estimated time,
+    best case estimated time,
+    worst case estimated time or anything else
     This piece of code was refactored in a separate class to avoid high number of methods in Task class
     """
 
