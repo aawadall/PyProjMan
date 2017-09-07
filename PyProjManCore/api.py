@@ -1,5 +1,5 @@
 # API Class, used as a middle layer between core classes and UI, Web App and external apps
-from PyProjMan.task import Task
+from PyProjManCore.task import Task
 
 
 class API:

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from PyProjMan.task import Task
+from PyProjManCore.task import Task
 
 
 class TestTaskOperationsExceptions(TestCase):

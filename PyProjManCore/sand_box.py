@@ -1,7 +1,7 @@
 # Scrap Paper File to try different Things
 
 # Test How to build a task variable
-from PyProjMan.task import Task
+from PyProjManCore.task import Task
 
 root = Task("Root Task")
 

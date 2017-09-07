@@ -1,8 +1,8 @@
 import uuid
 
 # Building Block
-from PyProjMan import time_element
-from PyProjMan.time_element import TimeElement
+from PyProjManCore import time_element
+from PyProjManCore.time_element import TimeElement
 
 
 class Task:
