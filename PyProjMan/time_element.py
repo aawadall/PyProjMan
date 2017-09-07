@@ -52,6 +52,9 @@ class TimeElement:
         self._start, self._end, self._duration = calculate_dates_and_durations(self._start,
                                                                                self._end,
                                                                                self._duration)
+    def __eq__(self, other):
+        if isinstance(other, TimeElement):
+            return self._start == other.start and self._end == other.end and self._duration == other.duration
 
 
 def assign_type(source, type1, type2):

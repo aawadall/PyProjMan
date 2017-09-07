@@ -1,19 +1,24 @@
 import uuid
 
 # Building Block
-from PyProjMan import TimeElement
+from PyProjMan import time_element
+from PyProjMan.time_element import TimeElement
 
 
 class Task:
     """Building block of a project plan"""
     type = "Task Element"
 
-    def __init__(self, name=None):
+    def __init__(self, name=None, none=None):
         # Actual Task Metrics
         self._actual = None
 
         # Planned Task Metrics
         self._planned = None
+
+        # Worst Best Scenarios
+        self._worst_time = None
+        self._best_time = None
 
         self._pct_complete = 0.0  # Percentage Completed
 
@@ -77,7 +82,6 @@ class Task:
         return self._dependants
 
     # Planned
-    # Starting
     @property
     def planned(self):
         """Task planned timings"""
@@ -85,7 +89,7 @@ class Task:
 
     @planned.setter
     def planned(self, value):
-        self._planned = TimeElement.assign_type(value, TimeElement, TimeElement)
+        self._planned = time_element.assign_type(value, TimeElement, TimeElement)
 
     @property
     def actual(self):
@@ -94,7 +98,25 @@ class Task:
 
     @actual.setter
     def actual(self, value):
-        self._actual = TimeElement.assign_type(value, TimeElement, TimeElement)
+        self._actual = time_element.assign_type(value, TimeElement, TimeElement)
+
+    @property
+    def best_scenario(self):
+        """Best Scenario Case Timing"""
+        return self._best_time
+
+    @best_scenario.setter
+    def best_scenario(self,value):
+        self._best_time = time_element.assign_type(value, TimeElement, TimeElement)
+
+    @property
+    def worst_scenario(self):
+        """Worst Scenario Case Timing"""
+        return self._worst_time
+
+    @worst_scenario.setter
+    def worst_scenario(self,value):
+        self._worst_time = time_element.assign_type(value, TimeElement, TimeElement)
 
     # Status
     @property
