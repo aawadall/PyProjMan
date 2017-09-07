@@ -1,6 +1,7 @@
 import uuid
 
 # Building Block
+import PyProjManCore.helpers
 from PyProjManCore import time_element
 from PyProjManCore.time_element import TimeElement
 
@@ -10,28 +11,29 @@ class Task:
     type = "Task Element"
 
     def __init__(self, name=None, none=None):
-        # Actual Task Metrics
+        # Basic Information
+        self._id = uuid.uuid4()
+        self._name = name
+        # Timing Metrics
+        self._planned = None
         self._actual = None
 
-        # Planned Task Metrics
-        self._planned = None
+        # Optional Time Metrics
+        self._worst = None
+        self._best = None
 
-        # Worst Best Scenarios
-        self._worst_time = None
-        self._best_time = None
+        # Percentage Completed
+        self._pct_complete = 0.0
 
-        self._pct_complete = 0.0  # Percentage Completed
-
+        # Lists used for the task tree structure
         self._dependants = []
-        self._name = name
         self._prerequisites = []
-        self._id = uuid.uuid4()
 
     # Task methods
 
     @property
     def id(self):
-        """Unique Task ID
+        """Unique Task ID, readonly value
         :rtype: UUID
         """
         return self._id
@@ -89,7 +91,7 @@ class Task:
 
     @planned.setter
     def planned(self, value):
-        self._planned = time_element.assign_type(value, TimeElement, TimeElement)
+        self._planned = PyProjManCore.helpers.assign_type(value, TimeElement, TimeElement)
 
     @property
     def actual(self):
@@ -98,25 +100,25 @@ class Task:
 
     @actual.setter
     def actual(self, value):
-        self._actual = time_element.assign_type(value, TimeElement, TimeElement)
+        self._actual = PyProjManCore.helpers.assign_type(value, TimeElement, TimeElement)
 
     @property
     def best_scenario(self):
         """Best Scenario Case Timing"""
-        return self._best_time
+        return self._best
 
     @best_scenario.setter
     def best_scenario(self,value):
-        self._best_time = time_element.assign_type(value, TimeElement, TimeElement)
+        self._best = PyProjManCore.helpers.assign_type(value, TimeElement, TimeElement)
 
     @property
     def worst_scenario(self):
         """Worst Scenario Case Timing"""
-        return self._worst_time
+        return self._worst
 
     @worst_scenario.setter
     def worst_scenario(self,value):
-        self._worst_time = time_element.assign_type(value, TimeElement, TimeElement)
+        self._worst = PyProjManCore.helpers.assign_type(value, TimeElement, TimeElement)
 
     # Status
     @property

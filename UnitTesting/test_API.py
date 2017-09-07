@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from PyProjManCore.api import API
 from PyProjManCore.task import Task
+from PyProjManUI.api import API
 
 
 class TestAPIInit(TestCase):
