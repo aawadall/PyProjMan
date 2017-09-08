@@ -37,6 +37,7 @@ Estimated Effort       | 2 man weeks
 #### Build Status 
 
  _Note that some of those badges takes up to 6 hours to update_
+ 
 Metric      | Shields | Notes
 ------------|:---------:|------
 Better Code | [![BCH compliance](https://bettercodehub.com/edge/badge/aawadall/PyProjMan?branch=master)](https://bettercodehub.com/) |
