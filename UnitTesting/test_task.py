@@ -60,5 +60,3 @@ class TestTaskParameters(TestCase):
         expected = 0.5
         t.completed = expected
         self.assertEqual(expected, t.completed)
-
-
