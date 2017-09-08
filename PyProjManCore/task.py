@@ -2,7 +2,6 @@ import uuid
 
 # Building Block
 import PyProjManCore.helpers
-from PyProjManCore import time_element
 from PyProjManCore.time_element import TimeElement
 
 
@@ -17,20 +16,16 @@ class Task:
         # Timing Metrics
         self._planned = None
         self._actual = None
-
         # Optional Time Metrics
         self._worst = None
         self._best = None
-
         # Percentage Completed
         self._pct_complete = 0.0
-
         # Lists used for the task tree structure
         self._dependants = []
         self._prerequisites = []
 
     # Task methods
-
     @property
     def id(self):
         """Unique Task ID, readonly value
