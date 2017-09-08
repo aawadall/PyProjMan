@@ -10,7 +10,7 @@ class Task:
     """Building block of a project plan"""
     type = "Task Element"
 
-    def __init__(self, name=None, none=None):
+    def __init__(self, name=None):
         # Basic Information
         self._id = uuid.uuid4()
         self._name = name
