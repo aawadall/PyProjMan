@@ -7,7 +7,7 @@ class TestProjMan(TestCase):
     def test_init(self):
         """Check Type of ProjMan"""
         pm = ProjMan()
-        self.assertTrue(isinstance(pm, ProjMan))
+        self.assertIsInstance(pm, ProjMan)
 
     def test_root(self):
         """Can create a new project with a root Task"""
@@ -60,3 +60,23 @@ class TestProjMan(TestCase):
         parent = Task("Parent Task")
         pm.add_parent(parent)
         self.assertIn(root, pm.root.dependants)
+
+    def test_list_tasks(self):
+        """Listing all tasks in a project"""
+        # Create Root
+        root = Task("Root Task")
+        # Create Project 
+        pm = ProjMan(root)
+        # Append Children 
+        child1 = Task("Child Task 1")
+        pm.add_child(child1)
+
+        child2 = Task("Child Task 2")
+        pm.add_child(child2)
+
+        task_list = pm.list_tasks()
+        self.assertTrue(
+            root in task_list and 
+            child1 in task_list and 
+            child2 in task_list)
+        
