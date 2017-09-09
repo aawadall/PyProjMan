@@ -34,7 +34,7 @@ class TestTaskParameters(TestCase):
         target = Task()
         prereqs = []
         for i in range(10):
-            p = Task("Super-task "+i)
+            p = Task("Super-task {}".format(i))
             prereqs.append(p)
         target.prerequisites = prereqs
 
@@ -49,7 +49,7 @@ class TestTaskParameters(TestCase):
         target = Task()
         dependants = []
         for i in range(10):
-            d = Task("Sub-task "+i)
+            d = Task("Sub-task {}".format(i))
             dependants.append(d)
         target.dependants = dependants
         self.assertEqual(dependants, target.dependants)

@@ -18,7 +18,7 @@ class TimeElement:
         self._start = assign_type(start, datetime.date, datetime.datetime)
         self._end = assign_type(end, datetime.date, datetime.datetime)
         self._duration = assign_type(duration, datetime.timedelta, datetime.timedelta)
-        _start, _end, _duration = calculate_dates_and_durations(self._start, self._end, self._duration)
+        self._start, self._end, self._duration = calculate_dates_and_durations(self._start, self._end, self._duration)
 
     @property
     def start(self):

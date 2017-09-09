@@ -18,7 +18,7 @@ class TestProjMan(TestCase):
     def test_name(self):
         """Can we define a name in the constructor?"""
         project_name = "Some Project Name"
-        pm = ProjMan(None,project_name)
+        pm = ProjMan(None, project_name)
         self.assertEqual(project_name, pm.name)
 
     def test_add_child(self):
@@ -94,4 +94,4 @@ class TestProjMan(TestCase):
         pm.add_child(child2)
 
         task_list = pm.list_tasks()
-        self.assertEqual(3,len(task_list))
+        self.assertEqual(3, len(task_list))

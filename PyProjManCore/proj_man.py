@@ -3,7 +3,7 @@ from PyProjManCore.task import Task
 
 class ProjMan:
     """Project Manager Object, uses Tasks and Time Elements"""
-    def __init__(self, root: Task = None, name = None):
+    def __init__(self, root: Task=None, name=None):
         """
         Initialize a project, with minimum one task as root task
         :type root: object

@@ -41,7 +41,7 @@ class TestProjStats(TestCase):
 
     def test_duration(self):
         stat = ProjStats()
-        duration = timedelta(days =5, hours=10, minutes=3)
+        duration = timedelta(days=5, hours=10, minutes=3)
         stat.duration = duration
         self.assertEqual(duration, stat.duration)
 
@@ -58,7 +58,6 @@ class TestProjStats(TestCase):
         new_task = "New Task"
         stat.append_task(new_task)
         self.assertIn(new_task, stat.tasks)
-
 
     def test_delete_from_tasks(self):
         stat = ProjStats()

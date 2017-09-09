@@ -140,7 +140,7 @@ Actual:
         return self._best
 
     @best_scenario.setter
-    def best_scenario(self,value):
+    def best_scenario(self, value):
         self._best = PyProjManCore.helpers.assign_type(value, TimeElement, TimeElement)
 
     @property
@@ -149,7 +149,7 @@ Actual:
         return self._worst
 
     @worst_scenario.setter
-    def worst_scenario(self,value):
+    def worst_scenario(self, value):
         self._worst = PyProjManCore.helpers.assign_type(value, TimeElement, TimeElement)
 
     # Status
@@ -161,4 +161,7 @@ Actual:
     @completed.setter
     def completed(self, value):
         self._pct_complete = value
+
+    def crawl_up(self):
+        pass
 

@@ -3,7 +3,7 @@ from PyProjManCore.task import Task
 
 class ProjStats:
     """Project Statistics Object, used for reporting purposes"""
-    def __init__(self, name = None):
+    def __init__(self, name=None):
         """empty object"""
         self._project_name = name
         self._first_task = None
@@ -25,7 +25,7 @@ class ProjStats:
         return self._first_task
 
     @first.setter
-    def first(self, value : Task ):
+    def first(self, value: Task):
         self._first_task = value
 
     @property
@@ -33,7 +33,7 @@ class ProjStats:
         return self._last_task
 
     @last.setter
-    def last(self, value : Task):
+    def last(self, value: Task):
         self._last_task = value
 
     @property
