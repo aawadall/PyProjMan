@@ -79,4 +79,19 @@ class TestProjMan(TestCase):
             root in task_list and 
             child1 in task_list and 
             child2 in task_list)
-        
+
+    def test_list_tasks_duplicates(self):
+        """Listing all tasks in a project, no duplicates"""
+        # Create Root
+        root = Task("Root Task")
+        # Create Project
+        pm = ProjMan(root)
+        # Append Children
+        child1 = Task("Child Task 1")
+        pm.add_child(child1)
+
+        child2 = Task("Child Task 2")
+        pm.add_child(child2)
+
+        task_list = pm.list_tasks()
+        self.assertEqual(3,len(task_list))
