@@ -26,6 +26,43 @@ class Task:
         self._prerequisites = []
 
     # Task methods
+    def list_children(self, children):
+        """Lists Tasks defined under a task"""
+        if len(self._dependants) > 0:
+            children.extend(self._dependants)
+            for child in self._dependants:
+                if len(child.list_children(children)) > 0:
+                    children.extend(child.list_children(children))
+        return children
+    
+    def report(self):
+        """Report Current Task Statistics"""
+        # List Task ID, Name
+        print("{} : {}".format(self.id, self.name))
+        # List Task Status
+        print("{} % Completed ".format(self.completed*100))
+        #  List Planned/Actual Time Metrics
+        print("""
+Planned:
+    Start   : {}
+    End     : {}
+    Duration: {}
+Actual:
+    Start   : {}
+    End     : {}
+    Duration: {}
+        """.format(self.planned.start, self.planned.end, self.planned.duration,
+                   self.actual.start, self.actual.end, self.actual.duration))
+
+        # List Prerequisite Tasks
+        print("Prerequisite Tasks")
+        for prereq in self.prerequisites:
+            print("{} - {}".format(prereq.id, prereq.name))
+        # List Dependant Tasks
+        print("Dependant Tasks")
+        for dependant in self.dependants:
+            print("{} - {}".format(dependant.id, dependant.name))
+
     @property
     def id(self):
         """Unique Task ID, readonly value
@@ -125,47 +162,3 @@ class Task:
     def completed(self, value):
         self._pct_complete = value
 
-    def list_children(self, children):
-        """Lists Tasks defined under a task"""
-        print("List Children")
-        for c in children:
-            print("Task:{} Length of Children{}".format(c.name,len(self._dependants)))
-
-        if len(self._dependants) > 0:
-            print("Hit")
-            children.extend(self._dependants)
-
-            for child in self._dependants:
-                print(child.name)
-                if len(child.list_children()) > 0:
-                    print("Extending")
-                    children.extend(child.list_children())
-        return children
-    
-    def report(self):
-        """Report Current Task Statistics"""
-        # List Task ID, Name
-        print("{} : {}".format(self.id, self.name))
-        # List Task Status
-        print("{} % Completed ".format(self.completed*100))
-        #  List Planned/Actual Time Metrics
-        print("""
-Planned:
-    Start   : {}
-    End     : {}
-    Duration: {}
-Actual:
-    Start   : {}
-    End     : {}
-    Duration: {}
-        """.format(self.planned.start, self.planned.end, self.planned.duration,
-                   self.actual.start, self.actual.end, self.actual.duration))
-
-        # List Prerequisite Tasks
-        print("Prerequisite Tasks")
-        for prereq in self.prerequisites:
-            print("{} - {}".format(prereq.id, prereq.name))
-        # List Dependant Tasks
-        print("Dependant Tasks")
-        for dependant in self.dependants:
-            print("{} - {}".format(dependant.id, dependant.name))

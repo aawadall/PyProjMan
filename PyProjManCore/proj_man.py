@@ -28,9 +28,8 @@ class ProjMan:
         self._root.append_prerequisite(parent)
         self._root = parent
 
-    @classmethod
     def list_tasks(self):
         """List of All Tasks defined in a project starting from root to last task"""
         print("List Tasks ")
-        result = self._root.list_children( [self.root])
+        result = self._root.list_children([self.root])
         return result
