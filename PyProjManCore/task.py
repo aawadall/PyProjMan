@@ -34,7 +34,7 @@ class Task:
                 if len(child.list_children(children)) > 0:
                     children.extend(child.list_children(children))
         return list(set(children))
-    
+
     def report(self):
         """Report Current Task Statistics"""
         # List Task ID, Name

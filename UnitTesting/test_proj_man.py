@@ -65,9 +65,9 @@ class TestProjMan(TestCase):
         """Listing all tasks in a project"""
         # Create Root
         root = Task("Root Task")
-        # Create Project 
+        # Create Project
         pm = ProjMan(root)
-        # Append Children 
+        # Append Children
         child1 = Task("Child Task 1")
         pm.add_child(child1)
 
@@ -76,8 +76,8 @@ class TestProjMan(TestCase):
 
         task_list = pm.list_tasks()
         self.assertTrue(
-            root in task_list and 
-            child1 in task_list and 
+            root in task_list and
+            child1 in task_list and
             child2 in task_list)
 
     def test_list_tasks_duplicates(self):
