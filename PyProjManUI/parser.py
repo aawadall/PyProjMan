@@ -6,15 +6,15 @@ from PyProjManCore.proj_man import ProjMan
 # each verb objects and parameters are linked to an API call defined in the api.py module
 class OpCode:
     """Used to systematically communicate with ProjMan"""
-    def __init__(self, verb, objects, literals):
+    def __init__(self, verb, parameters):
         """Made of:
         a verb
         list of objects
         list of literals
          """
         self._verb = verb
-        self._objects = objects
-        self._literals = literals
+        self._inp_params = parameters
+        self._feedback = []
 
 
 class PyProjManParser:
@@ -39,6 +39,8 @@ class PyProjManParser:
             'link':9,
             'list':10,
             'load':11,
+            'man':8,
+            'manual':8,
             'open':11,
             'promote':12,
             'quit':7,
@@ -73,27 +75,34 @@ class PyProjManParser:
             'from':3
         }
 
+        self._reply = {
+            100:'Success',
+            -10:'Syntax Error',
+            -20:'Not Found'
+        }
+
         self._project = project
 
     def listen(self):
         """Listens to user input"""
-        # TODO: In a loop,
-        # 1: read input from user : in a form of a string
-        # 2: pass input string to parse() function : get op code
-        # 3: pass op code to hook() : get feedback as op code
-        # 4: display feedback op code to user via feed_back()
+        _active = True
+        while _active:
+            inp = input("PyProjMan > ")  # 1: read input from user : in a form of a string
+            op_code = self.parse(inp)  # 2: pass input string to parse() function : get op code
+            op_code = self.hook(op_code)  # 3: pass op code to hook() : get feedback as op code
+            self.feed_back(op_code)  # 4: display feedback op code to user via feed_back()
         pass
 
-    def parse(self, input: str):
+    def parse(self, inp: str):
         """parse input string to call functions
         :returns op code mapped to function calls from ProjMan"""
         # TODO:
         # 1: split string into a verb and rest of string
         # 2: lookup verb in the _verbs dictionary, and place its numeric value
-        # 3: search for literals (defined by single, double quotes or square brackets)
-        # 4: place literals in the literals list
-        # 5: parse the rest of the string into objects by looking up _objects dictionary
-        # 6: check for syntax maps
+        # 3: slice input string into tokens; keywords and literals
+        # literals identified by double quotes, single quotes or square brackets surrounding them
+        # 4: lookup non literal tokens and replace them with values from _objects and _decoration dictionary
+        # 5: check for syntax maps
         # if all is ok, return op code object
         # otherwise, return a syntax error op code object
         pass
