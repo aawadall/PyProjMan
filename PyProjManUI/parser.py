@@ -1,4 +1,7 @@
 from PyProjManCore.proj_man import ProjMan
+import json
+import os
+from pprint import pprint
 # This parser object should handle the following entities
 # action
 # object(s)
@@ -21,67 +24,15 @@ class PyProjManParser:
     """PyProjMan parser used by the text based UI to interact with PyProjMan API"""
     def __init__(self, project: ProjMan):
         """This should contact API object first, but for Alpha release, it will directly contact ProjMan"""
-        # TODO: Move this definition to a configuration file instead
-        self._verbs = {
-            'add':0,
-            'adv':1,
-            'advice':1,
-            'assign':2,
-            'create':3,
-            'del':4,
-            'delete':4,
-            'dem':5,
-            'demote':5,
-            'est':6,
-            'estimate':6,
-            'exit':7,
-            'help':8,
-            'link':9,
-            'list':10,
-            'load':11,
-            'man':8,
-            'manual':8,
-            'open':11,
-            'promote':12,
-            'quit':7,
-            'remove':4,
-            'report':13,
-            'save':14,
-            'show':15,
-            'summary':16,
-            'sync':17,
-            'synchronize':17
-        }
-        self._objects = {
-            'best':0,
-            'act':1,
-            'actual':1,
-            'dat':2,
-            'date':2,
-            'est':3,
-            'estimated':3,
-            'file':4,
-            'planned':5,
-            'proj':6,
-            'project':6,
-            'stat':7,
-            'status':7,
-            'task':8,
-            'worst':9
-        }
-        self._decorators = {
-            'on':1,
-            'to':2,
-            'from':3
-        }
-
-        self._reply = {
-            100:'Success',
-            -10:'Syntax Error',
-            -20:'Not Found'
-        }
-
+        self._parser_data = self.load_parser_data()
         self._project = project
+
+    def load_parser_data(self):
+        with open(os.path.join(os.getcwd(),'data','parser.json')) as parser_data_file:
+            parser_data = json.load(parser_data_file)
+        #pprint(parser_data)
+        pprint(parser_data)
+        return parser_data
 
     def listen(self):
         """Listens to user input"""
@@ -124,3 +75,6 @@ class PyProjManParser:
         # passing objects, and literals as arguments
         # collect response, and convert it into op code, and return it to caller function
         pass
+
+Proj = ProjMan()
+par = PyProjManParser(Proj)
