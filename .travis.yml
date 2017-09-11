@@ -2,7 +2,7 @@
   "language": "python",
   "python": "3.6.1",
   "script": [
-    "python -m unittest PyProjMan/UnitTesting/test_proj_man.py"
+    "python -m unittest UnitTesting/test_proj_man.py"
   ],
   "group": "stable",
   "dist": "trusty",
