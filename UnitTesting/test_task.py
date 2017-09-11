@@ -1,6 +1,7 @@
-
+from datetime import datetime
 from unittest import TestCase
 from PyProjManCore.task import Task
+from PyProjManCore.time_element import TimeElement
 
 
 class TestTaskParameters(TestCase):
@@ -20,10 +21,21 @@ class TestTaskParameters(TestCase):
 
     def test_planned_dates(self):
         """Define planned start date"""
-        self.fail("Not implemented")
+        expected = datetime(year=2017, month = 11, day=30)
+        planned = TimeElement()
+        planned.start = expected
+        t = Task("Sample Task")
+        t.planned = planned
+        self.assertEqual(expected, t.planned.start)
 
     def test_actual_dates(self):
-        self.fail("Not implemented")
+        """Define actual start date"""
+        expected = datetime(year=2017, month = 11, day=30)
+        actual = TimeElement()
+        actual.start = expected
+        t = Task("Sample Task")
+        t.actual = actual
+        self.assertEqual(expected, t.actual.start)
 
     def test_prerequisites(self):
         """
