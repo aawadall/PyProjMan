@@ -22,11 +22,12 @@ class OpCode:
 
 class PyProjManParser:
     """PyProjMan parser used by the text based UI to interact with PyProjMan API"""
-    def __init__(self, project: ProjMan = None):
+    def __init__(self, project: ProjMan = None, config_file = None):
         """This should contact API object first, but for Alpha release, it will directly contact ProjMan"""
         # Load Parser Data
         try:
-            config_file = os.path.join(os.getcwd(), 'data', 'parser.json')
+            if config_file is None:
+                config_file = os.path.join(os.getcwd(), 'data', 'parser.json')
             self.load_parser_data(config_file)
         except FileNotFoundError:
             print("Configuration file not found")

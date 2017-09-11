@@ -7,8 +7,8 @@ from PyProjManUI.parser import PyProjManParser
 
 
 def helper_load_cfg_file():
-    p = PyProjManParser()
-    p.load_parser_data(os.path.join(os.getcwd(),'data',  'test.json'))
+    p = PyProjManParser(config_file= os.path.join('test.json'))
+    #p.load_parser_data(os.path.join('test.json'))
     return p
 
 
