@@ -45,6 +45,7 @@ Codacy      | [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e78e07
 Kiuwan      | [![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/security.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan) [![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/quality.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan) |
 Code Beat   | [![codebeat badge](https://codebeat.co/badges/32726467-44fd-4686-b768-60335e03a1a1)](https://codebeat.co/projects/github-com-aawadall-pyprojman-master) |
 Coveralls   |[![Coverage Status](https://coveralls.io/repos/github/aawadall/PyProjMan/badge.svg?branch=master)](https://coveralls.io/github/aawadall/PyProjMan?branch=master)|
+Travis CI  | [![Travis CI](https://travis-ci.org/aawadall/PyProjMan.svg?branch=master)] |
 
 
 [1]: https://github.com/aawadall/PyProjMan/blob/master/CONTRIBUTING.md
