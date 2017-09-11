@@ -1,0 +1,6 @@
+test:
+    script:
+    # Unit Tests
+    - python -m unittest UnitTesting/test_proj_man.py
+    - python -m unittest UnitTesting/test_proj_stats.py
+    - python -m unittest UnitTesting/test_task.py
