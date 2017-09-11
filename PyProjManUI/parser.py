@@ -22,17 +22,41 @@ class OpCode:
 
 class PyProjManParser:
     """PyProjMan parser used by the text based UI to interact with PyProjMan API"""
-    def __init__(self, project: ProjMan):
+    def __init__(self, project: ProjMan = None):
         """This should contact API object first, but for Alpha release, it will directly contact ProjMan"""
-        self._parser_data = self.load_parser_data()
+        # Load Parser Data
+        try:
+            config_file = os.path.join(os.getcwd(), 'data', 'parser.json')
+            self.load_parser_data(config_file)
+        except FileNotFoundError:
+            print("Configuration file not found")
+
+        # Load initial project
+        if project is None:
+            project = ProjMan()
         self._project = project
 
-    def load_parser_data(self):
-        with open(os.path.join(os.getcwd(),'data','parser.json')) as parser_data_file:
+    def load_parser_data(self, parser_config_file):
+        """Load Parser Configuration from a file"""
+        with open(parser_config_file) as parser_data_file:
             parser_data = json.load(parser_data_file)
-        #pprint(parser_data)
-        pprint(parser_data)
-        return parser_data
+        self._version = parser_data['Version']
+        self._release = parser_data['Release']
+        self._ignore_case = parser_data['IgnoreCase']
+        raw_primatives = parser_data['Primitives']
+        self._primatives = {}
+        for k,v in raw_primatives.items():
+            self._primatives[k] = int(v,16)
+        del raw_primatives
+        self._verbs = parser_data['Verbs']
+        self._parameters = parser_data['Parameters']
+        self._decorators = parser_data['Decorators']
+        self._reply = parser_data['Reply']
+        raw_err_codes = parser_data['ErrorCodes']
+        self._error_codes = {}
+        for k,v in raw_err_codes.items():
+            self._error_codes[int(k)] = v
+        del raw_err_codes
 
     def listen(self):
         """Listens to user input"""
