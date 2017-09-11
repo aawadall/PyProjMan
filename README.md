@@ -2,6 +2,20 @@
 # PyProjMan
 Commandline Based Project Management Application, written in Python. 
 
+
+#### Build Status 
+
+ _Note that some of those badges takes up to 6 hours to update_
+ 
+Metric      | Shields | Notes
+------------|:---------:|------
+Better Code | [![BCH compliance](https://bettercodehub.com/edge/badge/aawadall/PyProjMan?branch=master)](https://bettercodehub.com/) |
+Codacy      | [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e78e070a51a84885b5d9af3815923669)](https://www.codacy.com/app/aawadall/PyProjMan?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aawadall/PyProjMan&amp;utm_campaign=Badge_Grade) |
+Kiuwan      | [![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/security.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan) [![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/quality.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan) |
+Code Beat   | [![codebeat badge](https://codebeat.co/badges/32726467-44fd-4686-b768-60335e03a1a1)](https://codebeat.co/projects/github-com-aawadall-pyprojman-master) |
+Travis CI  | [![Travis CI](https://travis-ci.org/aawadall/PyProjMan.svg?branch=master)](https://travis-ci.org/aawadall/PyProjMan.svg?branch=master) |
+
+
 It is partially started to practice coding in python, and partially to overcome some challenges I personally faced when using existing Project Management Tools. 
 The main goal of this tool, is to allow users to script in project tasks, instead of manually writing things in a spreadsheet and the eye-balling the resulting GANTT chart.
 
@@ -34,19 +48,6 @@ Estimated Effort       | 2 man weeks
 - [ ] Calculate Project statistics, in a text report 
 - [x] Build unit tests for each feature 
  
-#### Build Status 
-
- _Note that some of those badges takes up to 6 hours to update_
- 
-Metric      | Shields | Notes
-------------|:---------:|------
-Better Code | [![BCH compliance](https://bettercodehub.com/edge/badge/aawadall/PyProjMan?branch=master)](https://bettercodehub.com/) |
-Codacy      | [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e78e070a51a84885b5d9af3815923669)](https://www.codacy.com/app/aawadall/PyProjMan?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aawadall/PyProjMan&amp;utm_campaign=Badge_Grade) |
-Kiuwan      | [![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/security.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan) [![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/quality.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan) |
-Code Beat   | [![codebeat badge](https://codebeat.co/badges/32726467-44fd-4686-b768-60335e03a1a1)](https://codebeat.co/projects/github-com-aawadall-pyprojman-master) |
-Coveralls   |[![Coverage Status](https://coveralls.io/repos/github/aawadall/PyProjMan/badge.svg?branch=master)](https://coveralls.io/github/aawadall/PyProjMan?branch=master)|
-Travis CI  | [![Travis CI](https://travis-ci.org/aawadall/PyProjMan.svg?branch=master)](https://travis-ci.org/aawadall/PyProjMan.svg?branch=master) |
-
 
 [1]: https://github.com/aawadall/PyProjMan/blob/master/CONTRIBUTING.md
 [2]: https://github.com/aawadall/PyProjMan/milestone/1
