@@ -8,7 +8,7 @@ from PyProjManUI.parser import PyProjManParser
 
 def helper_load_cfg_file():
     p = PyProjManParser()
-    p.load_parser_data('test.json')
+    p.load_parser_data(os.path.join('..','UnitTesting',  'test.json'))
     return p
 
 
