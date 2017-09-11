@@ -13,7 +13,7 @@ Better Code | [![BCH compliance](https://bettercodehub.com/edge/badge/aawadall/P
 Codacy      | [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e78e070a51a84885b5d9af3815923669)](https://www.codacy.com/app/aawadall/PyProjMan?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aawadall/PyProjMan&amp;utm_campaign=Badge_Grade) |
 Kiuwan      | [![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/security.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan) [![Kiuwan](https://www.kiuwan.com/github/aawadall/PyProjMan/badges/quality.svg)](https://www.kiuwan.com/github/aawadall/PyProjMan) |
 Code Beat   | [![codebeat badge](https://codebeat.co/badges/32726467-44fd-4686-b768-60335e03a1a1)](https://codebeat.co/projects/github-com-aawadall-pyprojman-master) |
-Travis CI  | [![Travis CI](https://travis-ci.org/aawadall/PyProjMan.svg?branch=master)](https://travis-ci.org/aawadall/PyProjMan.svg?branch=master) |
+Travis CI  | [![Travis CI](https://travis-ci.org/aawadall/PyProjMan.svg?branch=master)](https://travis-ci.org/aawadall/PyProjMan) |
 
 
 It is partially started to practice coding in python, and partially to overcome some challenges I personally faced when using existing Project Management Tools. 
