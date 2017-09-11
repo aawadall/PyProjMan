@@ -7,7 +7,8 @@ from PyProjManUI.parser import PyProjManParser
 
 
 def helper_load_cfg_file():
-    p = PyProjManParser(config_file= os.path.join('test.json'))
+    print(os.path.join('PyProjMan','UnitTesting', 'test.json'))
+    p = PyProjManParser(config_file=os.path.join(os.getcwd(), 'test.json'))
     #p.load_parser_data(os.path.join('test.json'))
     return p
 
@@ -16,8 +17,7 @@ class TestPyProjManParser(TestCase):
     """Test PyProjManParser"""
     def test_init(self):
         """Can we define a PyProjManParserobject?"""
-        proj = ProjMan()
-        p = PyProjManParser()
+        p = helper_load_cfg_file()
         self.assertIsInstance(p, PyProjManParser)
 
     def test_load_parser_data_version(self):

@@ -1,12 +1,17 @@
 from PyProjManCore.proj_man import ProjMan
 import json
 import os
+import pickle as pickle
+
 from pprint import pprint
 # This parser object should handle the following entities
 # action
 # object(s)
 # parameters
 # each verb objects and parameters are linked to an API call defined in the api.py module
+from PyProjManCore.task import Task
+
+
 class OpCode:
     """Used to systematically communicate with ProjMan"""
     def __init__(self, verb, parameters):
@@ -101,5 +106,7 @@ class PyProjManParser:
         # collect response, and convert it into op code, and return it to caller function
         pass
 
-Proj = ProjMan()
-par = PyProjManParser(Proj)
+    def save(self, file_name):
+        with open(file_name, 'wb') as f:
+            pickle.dump(json.dumps(self._project.__dict__), f)
+
