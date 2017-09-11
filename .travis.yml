@@ -9,4 +9,7 @@
   "group": "stable",
   "dist": "trusty",
   "os": "linux"
+  # .travis.yml
+  env:
+    CODECLIMATE_REPO_TOKEN: d08c9674d7011e339f39c011438c40a1544478656117406f5e1be59c2668b853
 }
