@@ -21,7 +21,7 @@ class TestTaskParameters(TestCase):
 
     def test_planned_dates(self):
         """Define planned start date"""
-        expected = datetime(year=2017, month = 11, day=30)
+        expected = datetime(year=2017, month=11, day=30)
         planned = TimeElement()
         planned.start = expected
         t = Task("Sample Task")
@@ -30,7 +30,7 @@ class TestTaskParameters(TestCase):
 
     def test_actual_dates(self):
         """Define actual start date"""
-        expected = datetime(year=2017, month = 11, day=30)
+        expected = datetime(year=2017, month=11, day=30)
         actual = TimeElement()
         actual.start = expected
         t = Task("Sample Task")

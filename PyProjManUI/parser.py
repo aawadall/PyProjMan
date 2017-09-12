@@ -27,7 +27,7 @@ class OpCode:
 
 class PyProjManParser:
     """PyProjMan parser used by the text based UI to interact with PyProjMan API"""
-    def __init__(self, project: ProjMan = None, config_file = None):
+    def __init__(self, project: ProjMan = None, config_file=None):
         """This should contact API object first, but for Alpha release, it will directly contact ProjMan"""
         # Load Parser Data
         try:
@@ -51,8 +51,8 @@ class PyProjManParser:
         self._ignore_case = parser_data['IgnoreCase']
         raw_primatives = parser_data['Primitives']
         self._primatives = {}
-        for k,v in raw_primatives.items():
-            self._primatives[k] = int(v,16)
+        for k, v in raw_primatives.items():
+            self._primatives[k] = int(v, 16) # Evaluate Hex
         del raw_primatives
         self._verbs = parser_data['Verbs']
         self._parameters = parser_data['Parameters']
@@ -86,7 +86,7 @@ class PyProjManParser:
         # 5: check for syntax maps
         # if all is ok, return op code object
         # otherwise, return a syntax error op code object
-        pass
+        return None
 
     def feed_back(self, op_code: OpCode):
         """Returns feedback from PyProjMan to end user
@@ -94,7 +94,7 @@ class PyProjManParser:
         # TODO:
         # Reverse lookup Op Code into text using the _reply dictionary, and construct feedback
         # this should return a string
-        pass
+        return None
 
     def hook(self, op_code):
         """what really interacts with ProjMan
@@ -104,7 +104,7 @@ class PyProjManParser:
         # Lookup verb in a large switch statement, and make a call based on the numeric value,
         # passing objects, and literals as arguments
         # collect response, and convert it into op code, and return it to caller function
-        pass
+        return None
 
     def save(self, file_name):
         with open(file_name, 'wb') as f:

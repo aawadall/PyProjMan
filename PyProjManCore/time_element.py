@@ -20,6 +20,12 @@ class TimeElement:
         self._duration = assign_type(duration, datetime.timedelta, datetime.timedelta)
         self._start, self._end, self._duration = calculate_dates_and_durations(self._start, self._end, self._duration)
 
+    def recalculate(self):
+        """Recalculates date/time components"""
+        self._start, self._end, self._duration = calculate_dates_and_durations(self._start,
+                                                                               self._end,
+                                                                               self._duration)
+
     @property
     def start(self):
         return self._start
@@ -27,9 +33,7 @@ class TimeElement:
     @start.setter
     def start(self, value):
         self._start = assign_type(value, datetime.datetime, datetime.date)
-        self._start, self._end, self._duration = calculate_dates_and_durations(self._start,
-                                                                               self._end,
-                                                                               self._duration)
+        self.recalculate()
 
     @property
     def end(self):
@@ -38,9 +42,7 @@ class TimeElement:
     @end.setter
     def end(self, value):
         self._end = assign_type(value, datetime.datetime, datetime.date)
-        self._start, self._end, self._duration = calculate_dates_and_durations(self._start,
-                                                                               self._end,
-                                                                               self._duration)
+        self.recalculate()
 
     @property
     def duration(self):
@@ -49,9 +51,7 @@ class TimeElement:
     @duration.setter
     def duration(self, value):
         self._duration = assign_type(value, datetime.timedelta, datetime.timedelta)
-        self._start, self._end, self._duration = calculate_dates_and_durations(self._start,
-                                                                               self._end,
-                                                                               self._duration)
+        self.recalculate()
 
     def __eq__(self, other):
         if isinstance(other, TimeElement):
