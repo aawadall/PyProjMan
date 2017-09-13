@@ -17,7 +17,7 @@ If you found something that needs change, please log an [issue][2] and label it 
 ### Development
 This project is mostly written in Python. You can use [PyCharm][5] to do the required development.
 There are two releases (defined as milestones) so far scheduled at [mid September][3] and [Early October][4] 2017, with issues (bugs, or features) assigned to each release. You can read the issue, figure how to implement or fix it, and submit a pull request with the proposed change.
-Before you submit the change, make sure you execute and existing unit test for this feature, and if not present, please write that unit test. Thank you.
+Before you submit the change, make sure you execute existing unit tests for this feature, and if not present, please write that unit test. Thank you.
 
 ### Reporting Issues
 You are welcome to play with the application, find bugs, or missing features. Please report any features or bugs in the [issue log][2], and assign it either **bug** or **feature** labels. The more issues we get, the richer the application would be.
