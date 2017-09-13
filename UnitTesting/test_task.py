@@ -49,7 +49,6 @@ class TestTaskParameters(TestCase):
             p = Task("Super-task {}".format(i))
             prereqs.append(p)
         target.prerequisites = prereqs
-
         self.assertEqual(prereqs, target.prerequisites)
 
     def test_dependants(self):
