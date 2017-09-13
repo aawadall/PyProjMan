@@ -98,6 +98,7 @@
   "ErrorCodes": {
     "100": "Success",
     "901": "Syntax Error",
-    "902": "Not Found"
+    "902": "Not Found",
+    "903": "Invalid Verb"
   }
 }

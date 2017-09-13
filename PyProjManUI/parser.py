@@ -1,3 +1,5 @@
+from pyparsing import ZeroOrMore, Regex
+
 from PyProjManCore.proj_man import ProjMan
 import json
 import os
@@ -23,6 +25,15 @@ class OpCode:
         self._verb = verb
         self._inp_params = parameters
         self._feedback = []
+        self._error = 0
+
+def tokenizer(inp: str):
+    """Slice input string into tokens"""
+    parser = ZeroOrMore(Regex(r'\[[^]]*\]') | Regex(r'"[^"]*"') | Regex(r'[^ ]+'))
+    tokens = []
+    for token in parser.parseString(inp):
+        tokens.append(token.replace('"','').replace("'",'').replace('[','').replace(']',''))
+    return tokens
 
 
 class PyProjManParser:
@@ -72,21 +83,26 @@ class PyProjManParser:
             op_code = self.parse(inp)  # 2: pass input string to parse() function : get op code
             op_code = self.hook(op_code)  # 3: pass op code to hook() : get feedback as op code
             self.feed_back(op_code)  # 4: display feedback op code to user via feed_back()
-        pass
 
     def parse(self, inp: str):
         """parse input string to call functions
         :returns op code mapped to function calls from ProjMan"""
         # TODO:
         # 1: split string into a verb and rest of string
+        tokens = tokenizer(inp)
         # 2: lookup verb in the _verbs dictionary, and place its numeric value
+        if tokens[0].lower() in self._verbs:
+            pass # Success
+        else:
+            op_code = OpCode()
+            op_code._error = self._error_codes[903] # Invalid Verb
         # 3: slice input string into tokens; keywords and literals
         # literals identified by double quotes, single quotes or square brackets surrounding them
         # 4: lookup non literal tokens and replace them with values from _objects and _decoration dictionary
         # 5: check for syntax maps
         # if all is ok, return op code object
         # otherwise, return a syntax error op code object
-        return None
+        return op_code
 
     def feed_back(self, op_code: OpCode):
         """Returns feedback from PyProjMan to end user
