@@ -4,12 +4,13 @@ from PyProjManUI.parser import PyProjManParser
 
 def main(args=None):
     """PyProjMan, a commandline project management tool, with brains!"""
-    print("""Welcome to PyProjMan
-    A commandline project management tool
-    with brains!
-    """)
     p = PyProjManParser()
-    print("""Release:{}""".format(p._release))
+    print("""
+Welcome to PyProjMan 
+Release : {} - {}
+A commandline project management tool
+With Brains!
+    """.format(p._version, p._release))
     p.listen()
 
 if __name__ == "__main__": main()

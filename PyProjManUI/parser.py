@@ -65,7 +65,12 @@ class PyProjManParser:
             self._verbs = parser_data['Verbs']
             self._parameters = parser_data['Parameters']
             self._decorators = parser_data['Decorators']
-            self._reply = parser_data['Reply']
+            raw_reply = parser_data['Reply']
+            self._reply = {}
+            for k, v in raw_reply.items():
+                print(k, v)
+                self._reply[int(k)] = v
+            del raw_reply
             raw_err_codes = parser_data['ErrorCodes']
             self._error_codes = {}
             for k, v in raw_err_codes.items():
@@ -123,8 +128,14 @@ class PyProjManParser:
 
         # Reverse lookup Op Code into text using the _reply dictionary, and construct feedback
         # this should return a string
-        op_code._feedback = self._error_codes[op_code.error]
-        print("{}:{}".format(self._error_codes[op_code.error],op_code._feedback))
+
+        op_code._feedback = self._error_codes[op_code._error]
+        for param in op_code._inp_params:
+            if isinstance(param, int):
+                op_code._feedback = op_code._feedback + " {}".format(self._primatives[param])
+            else:
+                op_code._feedback = op_code._feedback + " {}".format(param)
+        print("{} : {}".format(op_code._error, op_code._feedback))
         return op_code
 
     def hook(self, op_code):
@@ -141,13 +152,9 @@ class PyProjManParser:
             print('Creating a Project with the name [{}]'.format(op_code._inp_params[1]))
             self._project = ProjMan(name=op_code._inp_params[1])
             op_code._error=100
-            op_code._feedback=self._reply['SUCCESS']+", Created Project [{}]".format(self._project.name)
         elif op_code._verb == self._primatives['EXIT']:
-            op_code.error=100
-            op_code._feedback = "Good bye!"
+            op_code._error=200
         else:
-            print("Did not identify syntax")
             op_code._error=901
-            op_code._feedback=self._reply['FAILURE']
         return op_code
 

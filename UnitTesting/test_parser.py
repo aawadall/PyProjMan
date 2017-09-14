@@ -75,7 +75,7 @@ class TestPyProjManParser(TestCase):
     def test_load_parser_data_reply(self):
         """Can read Reply from Config file"""
         p = helper_load_cfg_file()
-        key = 'SUCCESS'
+        key = 100
         value = 'Success'
         target = {key: value}
         self.assertEqual(target[key], p._reply[key])

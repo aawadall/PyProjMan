@@ -92,13 +92,17 @@
     "from": "FROM"
   },
   "Reply": {
-    "SUCCESS": "Success",
-    "FAILURE": "Failure"
+    "100": "",
+    "200": "Bye",
+    "999": ""
   },
   "ErrorCodes": {
     "100": "Success",
+    "200": "Exiting!",
+    "300": "Pending",
     "901": "Syntax Error",
     "902": "Not Found",
-    "903": "Invalid Verb"
+    "903": "Invalid Verb",
+    "999": "Failure"
   }
 }
