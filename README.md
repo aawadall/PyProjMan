@@ -42,9 +42,9 @@ Estimated Effort       | 2 man weeks
 #### Features & Specs
 
 - [x] Basic Application Skeleton 
-- [ ] Commandline user interface 
+- [x] Commandline user interface 
 - [x] Define the **_task_**, as basic building block of the project 
-- [ ] Tasks defined in runtime without saving them 
+- [x] Tasks defined in runtime without saving them 
 - [ ] Calculate Project statistics, in a text report 
 - [x] Build unit tests for each feature 
  
