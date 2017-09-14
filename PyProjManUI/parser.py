@@ -12,7 +12,7 @@ import os
 
 class OpCode:
     """Used to systematically communicate with ProjMan"""
-    def __init__(self, verb, parameters):
+    def __init__(self, verb=None, parameters=None, feedback=None, error=None):
         """Made of:
         a verb
         list of objects
@@ -20,8 +20,13 @@ class OpCode:
          """
         self._verb = verb
         self._inp_params = parameters
-        self._feedback = []
-        self._error = 0
+        self._feedback = feedback
+        self._error = error
+
+    @property
+    def error(self):
+        return self._error
+
 
 def tokenizer(inp: str):
     """Slice input string into tokens"""
@@ -86,8 +91,8 @@ class PyProjManParser:
         if tokens[0].lower() in self._verbs:
             pass # Success
         else:
-            op_code = OpCode()
-            op_code._error = self._error_codes[903] # Invalid Verb
+            op_code = OpCode(error=903) # Invalid Verb
+
         # 3: slice input string into tokens; keywords and literals
         # literals identified by double quotes, single quotes or square brackets surrounding them
         # 4: lookup non literal tokens and replace them with values from _objects and _decoration dictionary
@@ -102,7 +107,8 @@ class PyProjManParser:
         # TODO:
         # Reverse lookup Op Code into text using the _reply dictionary, and construct feedback
         # this should return a string
-        return None
+        op_code._feedback = self._error_codes[op_code.error]
+        return op_code
 
     def hook(self, op_code):
         """what really interacts with ProjMan
