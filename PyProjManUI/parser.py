@@ -27,6 +27,13 @@ class OpCode:
     def error(self):
         return self._error
 
+    def __str__(self):
+        ret = "Opcode Verb : [{}] Parameters:".format(self._verb)
+        for par in self._inp_params:
+            ret = ret + "{}, ".format(par)
+        ret = ret + " Feedback : {}   Error : {}".format(self._feedback, self._error)
+        return ret
+
 
 def tokenizer(inp: str):
     """Slice input string into tokens"""
@@ -84,12 +91,19 @@ class PyProjManParser:
     def parse(self, inp: str):
         """parse input string to call functions
         :returns op code mapped to function calls from ProjMan"""
+        op_code = OpCode()
         # TODO:
         # 1: split string into a verb and rest of string
         tokens = tokenizer(inp)
         # 2: lookup verb in the _verbs dictionary, and place its numeric value
         if tokens[0].lower() in self._verbs:
-            pass # Success
+            op_code = OpCode(verb=self._primatives[self._verbs[tokens[0].lower()]])
+            op_code._inp_params = []
+            for token in tokens[1:]:
+                if token.upper() in self._primatives:
+                    op_code._inp_params.append(self._primatives[token.upper()])
+                else:
+                    op_code._inp_params.append(token)
         else:
             op_code = OpCode(error=903) # Invalid Verb
 
@@ -118,5 +132,16 @@ class PyProjManParser:
         # Lookup verb in a large switch statement, and make a call based on the numeric value,
         # passing objects, and literals as arguments
         # collect response, and convert it into op code, and return it to caller function
-        return None
+        # Create a Project
+        print("Inside Hook, param[0] = {} expected [{}]".format(op_code._inp_params[0], self._primatives['PROJECT']))
+        if op_code._verb == self._primatives['CREATE'] and op_code._inp_params[0] == self._primatives['PROJECT']:
+            print('Creating a Project with the name [{}]'.format(op_code._inp_params[1]))
+            self._project = ProjMan(name=op_code._inp_params[1])
+            op_code._error=100
+            op_code._feedback=self._reply['SUCCESS']+", Created Project [{}]".format(self._project.name)
+        else:
+            print("Did not identify syntax")
+            op_code._error=901
+            op_code._feedback=self._reply['FAILURE']
+        return op_code
 
