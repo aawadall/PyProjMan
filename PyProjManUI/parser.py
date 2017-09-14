@@ -87,6 +87,8 @@ class PyProjManParser:
             op_code = self.parse(inp)  # 2: pass input string to parse() function : get op code
             op_code = self.hook(op_code)  # 3: pass op code to hook() : get feedback as op code
             self.feed_back(op_code)  # 4: display feedback op code to user via feed_back()
+            if op_code._verb == self._primatives['EXIT']:
+                _active = False
 
     def parse(self, inp: str):
         """parse input string to call functions
@@ -122,6 +124,7 @@ class PyProjManParser:
         # Reverse lookup Op Code into text using the _reply dictionary, and construct feedback
         # this should return a string
         op_code._feedback = self._error_codes[op_code.error]
+        print("{}:{}".format(self._error_codes[op_code.error],op_code._feedback))
         return op_code
 
     def hook(self, op_code):
@@ -133,12 +136,15 @@ class PyProjManParser:
         # passing objects, and literals as arguments
         # collect response, and convert it into op code, and return it to caller function
         # Create a Project
-        print("Inside Hook, param[0] = {} expected [{}]".format(op_code._inp_params[0], self._primatives['PROJECT']))
+        print(op_code)
         if op_code._verb == self._primatives['CREATE'] and op_code._inp_params[0] == self._primatives['PROJECT']:
             print('Creating a Project with the name [{}]'.format(op_code._inp_params[1]))
             self._project = ProjMan(name=op_code._inp_params[1])
             op_code._error=100
             op_code._feedback=self._reply['SUCCESS']+", Created Project [{}]".format(self._project.name)
+        elif op_code._verb == self._primatives['EXIT']:
+            op_code.error=100
+            op_code._feedback = "Good bye!"
         else:
             print("Did not identify syntax")
             op_code._error=901
