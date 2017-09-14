@@ -92,17 +92,22 @@ class TestPyProjManParser(TestCase):
         """Parse input string of create project (Verb)"""
         p = helper_load_cfg_file()
         op_code = p.parse("CREATE PROJECT [Test Project]")
-        self.assertEqual(op_code._verb, 256)
+        target = p._primatives['CREATE']
+        self.assertEqual(op_code._verb, target)
 
     def test_parse_create_project_parameters(self):
         """Parse input string of create project (Parameters)"""
         p = helper_load_cfg_file()
         op_code = p.parse("CREATE PROJECT [Test Project]")
-        self.assertIn('PROJECT',op_code._inp_params)
+        target = p._primatives['PROJECT']
+        self.assertIn(target,op_code._inp_params)
 
     def test_parse_create_project_realization(self):
         """Parse input string of create project (Creates the project)"""
         p = helper_load_cfg_file()
         project_name = "Test Project"
-        p.parse("CREATE PROJECT [{}]".format(project_name))
+        op_code = p.parse("CREATE PROJECT [{}]".format(project_name))
+        print(op_code)
+        op_code = p.hook(op_code)
+        print(op_code)
         self.assertEqual(p._project.name, project_name)
