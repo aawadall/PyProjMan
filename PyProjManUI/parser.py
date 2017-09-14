@@ -68,7 +68,6 @@ class PyProjManParser:
             raw_reply = parser_data['Reply']
             self._reply = {}
             for k, v in raw_reply.items():
-                print(k, v)
                 self._reply[int(k)] = v
             del raw_reply
             raw_err_codes = parser_data['ErrorCodes']
@@ -128,14 +127,13 @@ class PyProjManParser:
 
         # Reverse lookup Op Code into text using the _reply dictionary, and construct feedback
         # this should return a string
-
-        op_code._feedback = self._error_codes[op_code._error]
+        op_code._feedback = self.lookup_primative(op_code._verb)
         for param in op_code._inp_params:
             if isinstance(param, int):
-                op_code._feedback = op_code._feedback + " {}".format(self._primatives[param])
+                op_code._feedback = op_code._feedback + " {}".format(self.lookup_primative(param))
             else:
                 op_code._feedback = op_code._feedback + " {}".format(param)
-        print("{} : {}".format(op_code._error, op_code._feedback))
+        print("{} : {}".format(self._error_codes[op_code._error], op_code._feedback))
         return op_code
 
     def hook(self, op_code):
@@ -149,7 +147,6 @@ class PyProjManParser:
         # Create a Project
 
         if op_code._verb == self._primatives['CREATE'] and op_code._inp_params[0] == self._primatives['PROJECT']:
-            print('Creating a Project with the name [{}]'.format(op_code._inp_params[1]))
             self._project = ProjMan(name=op_code._inp_params[1])
             op_code._error=100
         elif op_code._verb == self._primatives['EXIT']:
@@ -158,3 +155,9 @@ class PyProjManParser:
             op_code._error=901
         return op_code
 
+    def lookup_primative(self, primative_value):
+        if primative_value in self._primatives.values():
+            for k,v in self._primatives.items():
+                if v == primative_value:
+                    return k
+        return None

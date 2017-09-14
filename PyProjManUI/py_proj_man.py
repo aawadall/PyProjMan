@@ -1,4 +1,4 @@
-## Entry point to the application
+# Entry point to the application
 from PyProjManUI.parser import PyProjManParser
 
 
@@ -11,6 +11,8 @@ Release : {} - {}
 A commandline project management tool
 With Brains!
     """.format(p._version, p._release))
+    if args is not None:
+        p.parse(args)
     p.listen()
 
 if __name__ == "__main__": main()
