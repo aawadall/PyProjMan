@@ -8,7 +8,8 @@ from PyProjManUI.parser import PyProjManParser, OpCode
 
 def helper_load_cfg_file():
     print(os.path.join('PyProjMan','UnitTesting', 'test.json'))
-    p = PyProjManParser(config_file=os.path.join(os.getcwd(), 'test.json'))
+    #p = PyProjManParser(config_file=os.path.join(os.getcwd(), 'test.json'))
+    p = PyProjManParser(config_file = os.path.join(os.getcwd(),'PyProjManUI','data', 'parser.json'))
     return p
 
 
@@ -22,7 +23,7 @@ class TestPyProjManParser(TestCase):
     def test_load_parser_data_version(self):
         """Can read Version from Config file"""
         p = helper_load_cfg_file()
-        target = '0.0.2'
+        target = '0.0.3'
         self.assertEqual(target,p._version)
 
     def test_load_parser_data_release(self):
@@ -44,7 +45,7 @@ class TestPyProjManParser(TestCase):
         key = 'ADD'
         value = 256
         target = {key: value}
-        self.assertEqual(target[key], p._primatives[key])
+        self.assertEqual(target[key], p._primitives[key])
 
     def test_load_parser_data_verbs(self):
         """Can read Verbs from Config file"""
@@ -75,8 +76,8 @@ class TestPyProjManParser(TestCase):
     def test_load_parser_data_reply(self):
         """Can read Reply from Config file"""
         p = helper_load_cfg_file()
-        key = 100
-        value = 'Success'
+        key = 200
+        value = 'Bye'
         target = {key: value}
         self.assertEqual(target[key], p._reply[key])
 
@@ -92,14 +93,14 @@ class TestPyProjManParser(TestCase):
         """Parse input string of create project (Verb)"""
         p = helper_load_cfg_file()
         op_code = p.parse("CREATE PROJECT [Test Project]")
-        target = p._primatives['CREATE']
+        target = p._primitives['CREATE']
         self.assertEqual(op_code._verb, target)
 
     def test_parse_create_project_parameters(self):
         """Parse input string of create project (Parameters)"""
         p = helper_load_cfg_file()
         op_code = p.parse("CREATE PROJECT [Test Project]")
-        target = p._primatives['PROJECT']
+        target = p._primitives['PROJECT']
         self.assertIn(target,op_code._inp_params)
 
     def test_parse_create_project_realization(self):

@@ -57,11 +57,11 @@ class PyProjManParser:
             self._version = parser_data['Version']
             self._release = parser_data['Release']
             self._ignore_case = parser_data['IgnoreCase']
-            raw_primatives = parser_data['Primitives']
-            self._primatives = {}
-            for k, v in raw_primatives.items():
-                self._primatives[k] = int(v, 16)  # Evaluate Hex
-            del raw_primatives
+            raw_primitives = parser_data['Primitives']
+            self._primitives = {}
+            for k, v in raw_primitives.items():
+                self._primitives[k] = int(v, 16)  # Evaluate Hex
+            del raw_primitives
             self._verbs = parser_data['Verbs']
             self._parameters = parser_data['Parameters']
             self._decorators = parser_data['Decorators']
@@ -97,7 +97,7 @@ Exiting
             op_code = self.parse(inp)  # 2: pass input string to parse() function : get op code
             op_code = self.hook(op_code)  # 3: pass op code to hook() : get feedback as op code
             self.feed_back(op_code)  # 4: display feedback op code to user via feed_back()
-            if op_code._verb == self._primatives['EXIT']:
+            if op_code._verb == self._primitives['EXIT']:
                 _active = False
 
     def parse(self, inp: str):
@@ -109,11 +109,11 @@ Exiting
         tokens = tokenizer(inp)
         # 2: lookup verb in the _verbs dictionary, and place its numeric value
         if tokens[0].lower() in self._verbs:
-            op_code = OpCode(verb=self._primatives[self._verbs[tokens[0].lower()]])
+            op_code = OpCode(verb=self._primitives[self._verbs[tokens[0].lower()]])
             op_code._inp_params = []
             for token in tokens[1:]:
                 if token.lower() in self._parameters:
-                    op_code._inp_params.append(self._primatives[self._parameters[token.lower()]])
+                    op_code._inp_params.append(self._primitives[self._parameters[token.lower()]])
                 else:
                     op_code._inp_params.append(token)
         else:
@@ -152,18 +152,18 @@ Exiting
         # collect response, and convert it into op code, and return it to caller function
         # Create a Project
 
-        if op_code._verb == self._primatives['CREATE'] and op_code._inp_params[0] == self._primatives['PROJECT']:
+        if op_code._verb == self._primitives['CREATE'] and op_code._inp_params[0] == self._primitives['PROJECT']:
             self._project = ProjMan(name=op_code._inp_params[1])
             op_code._error=100
-        elif op_code._verb == self._primatives['EXIT']:
+        elif op_code._verb == self._primitives['EXIT']:
             op_code._error=200
         else:
             op_code._error=901
         return op_code
 
     def lookup_primative(self, primative_value):
-        if primative_value in self._primatives.values():
-            for k,v in self._primatives.items():
+        if primative_value in self._primitives.values():
+            for k,v in self._primitives.items():
                 if v == primative_value:
                     return k
         return None

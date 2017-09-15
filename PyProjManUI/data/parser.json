@@ -1,6 +1,6 @@
 {
   "FileDescription": "PyProjMan Keyword Dictionary",
-  "Version":"0.0.2",
+  "Version":"0.0.3",
   "Release":"alpha",
   "IgnoreCase":true,
   "Primitives" : {

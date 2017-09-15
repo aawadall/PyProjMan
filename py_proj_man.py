@@ -7,7 +7,7 @@ from PyProjManUI.parser import PyProjManParser
 def main(args=None):
     """PyProjMan, a commandline project management tool, with brains!"""
     print("Welcome to PyProjMan")
-    p = PyProjManParser(config_file=os.path.join(os.getcwd(), 'parser.json'))
+    p = PyProjManParser(config_file = os.path.join(os.getcwd(),'PyProjManUI','data', 'parser.json'))
     if p.valid:
         print("""Release : {} - {}
 A commandline project management tool
