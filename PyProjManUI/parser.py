@@ -68,14 +68,14 @@ class PyProjManParser:
             self._decorators = parser_data['Decorators']
             raw_reply = parser_data['Reply']
             self._reply = {}
-            for k, v in raw_reply.items():
-                self._reply[int(k)] = v
             del raw_reply
             raw_err_codes = parser_data['ErrorCodes']
             self._error_codes = {}
             for k, v in raw_err_codes.items():
                 self._error_codes[int(k)] = v
             del raw_err_codes
+            self._help_strings = parser_data['HelpString']
+
             self._valid = True
         except FileNotFoundError:
             print("""
@@ -93,8 +93,11 @@ Exiting
     def listen(self):
         """Listens to user input"""
         _active = True
+        op_code = OpCode()
+
         while _active:
             inp = input("PyProjMan > ")  # 1: read input from user : in a form of a string
+            op_code._override_feedback = False
             op_code = self.parse(inp)  # 2: pass input string to parse() function : get op code
             op_code = self.hook(op_code)  # 3: pass op code to hook() : get feedback as op code
             self.feed_back(op_code)  # 4: display feedback op code to user via feed_back()
@@ -187,18 +190,36 @@ Exiting
     def help(self, op_code):
         """Provides Help on how to use the CLI"""
         if len(op_code._inp_params) > 0:
-            if op_code._inp_params[0] in self._primitives:
-                op_code._feedback = "Not implemented yet"
+            inquiry = op_code._inp_params[0]
+            if isinstance(inquiry, int):
+                if inquiry in self._primitives.values():
+                    inquiry = self.lookup_primative(inquiry)
+
+            # Lookup keywords
+            # In verbs
+            if inquiry in self._verbs.keys():
+                inquiry = self._verbs[inquiry]
+
+            # In Parameters
+            if inquiry in self._parameters.keys():
+                inquiry = self._parameters[inquiry]
+
+            if inquiry in self._primitives.keys():
+                op_code._feedback = "{} ({}) \n{}".format(op_code._inp_params[0],inquiry, self.help_primitive(inquiry))
+            else:
+                op_code._feedback = 'Unable to find keyword {}'.format(op_code._inp_params[0])
+                op_code._error = 902
+                op_code._override_feedback = True
+                return op_code
         else:
             op_code._feedback = "PyProjMan version {} - {} release!".format(self.version, self.release)
             op_code._feedback = op_code._feedback + "\nList of keywords :"
             for verb_key, primitive_key in self._verbs.items():
-                op_code._feedback = op_code._feedback  + "\n {} - {}".format(verb_key,self.help_primitive(primitive_key))
-                # TODO: add a help dictionary tied to primitives
+                op_code._feedback = op_code._feedback  + "\n {} \t- \t{}".format(verb_key,self.help_primitive(primitive_key))
         op_code._error = 100
         op_code._override_feedback = True
         return op_code
 
     def help_primitive(self, prim):
         """Givin a primitive key, get help text"""
-        return "Feature not implemented yet"
+        return self._help_strings[prim]
