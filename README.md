@@ -29,6 +29,7 @@ To run PyProjMan
 1. download the project 
 
 `git clone https://github.com/aawadall/PyProjMan.git`
+
 2. run the following command 
 
 `python py_proj_man.py`
