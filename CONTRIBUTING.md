@@ -20,8 +20,8 @@ If you found something that needs change, please log an [issue][2] and label it 
 This project is mostly written in Python. You can use [PyCharm][5] to do the required development.
 There are two releases (defined as milestones) so far scheduled at [mid September][3] and [Early October][4] 2017, with issues (bugs, or features) assigned to each release. You can read the issue, figure how to implement or fix it, and submit a pull request with the proposed change.
 
-Before you submit the change, make sure you execute existing unit tests for this feature, and if not present, please write that unit test. 
-After you test your code, you can commit and push your code into a new branch, and submit a pull request. This will allow a set of code quality metrics to validate your work. 
+Before you submit the change, __make sure you execute existing unit tests__ for this feature, and __if not present__, please write that unit test. 
+After you test your code, you can _commit_ and _push_ your code (including unit tests) into a __new branch__, and submit a __pull request__. This will allow a set of code quality metrics to validate your work. 
 We are totally fine with code that might bring code quality down for a while, as long as it adds new features or fixes bugs. 
 Code quality can be fixed later with refactoring, when all required features and bug fixes are coded, tested and commited.
 
