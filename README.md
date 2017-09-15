@@ -30,6 +30,7 @@ To run PyProjMan
 
 `git clone https://github.com/aawadall/PyProjMan.git`
 
+you can also download it as [zip][4] file 
 2. run the following command 
 
 `python py_proj_man.py`
@@ -62,4 +63,4 @@ Estimated Effort       | 2 man weeks
 [1]: https://github.com/aawadall/PyProjMan/blob/master/CONTRIBUTING.md
 [2]: https://github.com/aawadall/PyProjMan/milestone/1
 [3]: https://github.com/aawadall/PyProjMan/milestone/2
-
+[4]: https://github.com/aawadall/PyProjMan/archive/master.zip
