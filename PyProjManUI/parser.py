@@ -68,6 +68,8 @@ class PyProjManParser:
             self._decorators = parser_data['Decorators']
             raw_reply = parser_data['Reply']
             self._reply = {}
+            for k, v in raw_reply.items():
+                self._reply[int(k)] = v
             del raw_reply
             raw_err_codes = parser_data['ErrorCodes']
             self._error_codes = {}

@@ -79,6 +79,7 @@ class TestPyProjManParser(TestCase):
         key = 200
         value = 'Bye'
         target = {key: value}
+        print(p._reply[key])
         self.assertEqual(target[key], p._reply[key])
 
     def test_load_parser_data_err_codes(self):
