@@ -1,5 +1,6 @@
-os:
- - linux
+os: linux
+dist: trusty
+sudo: false
 language: python
 python:
   - "3.4"
