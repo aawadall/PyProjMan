@@ -75,8 +75,14 @@ class PyProjManParser:
             for k, v in raw_err_codes.items():
                 self._error_codes[int(k)] = v
             del raw_err_codes
+            self._valid = True
         except FileNotFoundError:
-            print("Configuration file not found")
+            print("""
+Fatal Error:
+Configuration file not found
+Exiting
+""")
+            self._valid = False
 
         # Load initial project
         if project is None:
@@ -106,8 +112,8 @@ class PyProjManParser:
             op_code = OpCode(verb=self._primatives[self._verbs[tokens[0].lower()]])
             op_code._inp_params = []
             for token in tokens[1:]:
-                if token.upper() in self._primatives:
-                    op_code._inp_params.append(self._primatives[token.upper()])
+                if token.lower() in self._parameters:
+                    op_code._inp_params.append(self._primatives[self._parameters[token.lower()]])
                 else:
                     op_code._inp_params.append(token)
         else:
@@ -161,3 +167,15 @@ class PyProjManParser:
                 if v == primative_value:
                     return k
         return None
+
+    @property
+    def valid(self):
+        return self._valid
+
+    @property
+    def release(self):
+        return self._release
+
+    @property
+    def version(self):
+        return self._version
