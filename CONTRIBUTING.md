@@ -7,7 +7,9 @@ Be it reporting an issue, requesting a feature, designing or writing code, docum
 This project is mostly written in Python, so some basic knowledge on how to code in Python will be required if you decide to contribute in code.
 Anything else, will not require specific technical background.
 
-You can have a look at development progress at [Zube's Sprint Board](https://zube.io/aawadall/pyprojman/w/first-releases/sprintboard?where%5Bsprint_id%5D=18371) of this project 
+You can have a look at development progress at [Zube's Sprint Board](https://zube.io/aawadall/pyprojman/w/first-releases/sprintboard?where%5Bsprint_id%5D=18371) of this project.
+
+_We are experimenting with [Code Tree](https://codetree.com/projects/KAo6/issues?show_welcome=true) as well, please vote, which one you prefer_
 
 ## Contributions Needed
 We need help in the following areas:
