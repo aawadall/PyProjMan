@@ -24,6 +24,15 @@ So, instead of requiring an experienced project manager, with experienced team t
 
 In addition, exposure to large number of projects, would allow the tool to figure out project contexts, and propose tasks that were not considered as part of the original project plan. 
 
+## Usage 
+To run PyProjMan 
+1. download the project 
+
+`git clone https://github.com/aawadall/PyProjMan.git`
+2. run the following command 
+
+`python py_proj_man.py`
+
 ## Contribution 
 This project is in deep need for contributors, in development, artwork, system design, testing, and documentation.
 If you are interested, please check out  [contribution guidelines][1]
