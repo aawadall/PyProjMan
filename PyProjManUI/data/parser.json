@@ -43,6 +43,7 @@
     "advice": "ADVICE",
     "assign": "ASSIGN",
     "create": "CREATE",
+    "bye": "EXIT",
     "del": "DELETE",
     "delete": "DELETE",
     "dem": "DEMOTE",

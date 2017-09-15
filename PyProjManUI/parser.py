@@ -22,6 +22,7 @@ class OpCode:
         self._inp_params = parameters
         self._feedback = feedback
         self._error = error
+        self._override_feedback = False
 
     @property
     def error(self):
@@ -133,12 +134,13 @@ Exiting
 
         # Reverse lookup Op Code into text using the _reply dictionary, and construct feedback
         # this should return a string
-        op_code._feedback = self.lookup_primative(op_code._verb)
-        for param in op_code._inp_params:
-            if isinstance(param, int):
-                op_code._feedback = op_code._feedback + " {}".format(self.lookup_primative(param))
-            else:
-                op_code._feedback = op_code._feedback + " {}".format(param)
+        if not op_code._override_feedback:
+            op_code._feedback = self.lookup_primative(op_code._verb)
+            for param in op_code._inp_params:
+                if isinstance(param, int):
+                    op_code._feedback = op_code._feedback + " {}".format(self.lookup_primative(param))
+                else:
+                    op_code._feedback = op_code._feedback + " {}".format(param)
         print("{} : {}".format(self._error_codes[op_code._error], op_code._feedback))
         return op_code
 
@@ -157,6 +159,8 @@ Exiting
             op_code._error=100
         elif op_code._verb == self._primitives['EXIT']:
             op_code._error=200
+        elif op_code._verb == self._primitives['MANUAL']:
+            op_code = self.help(op_code)
         else:
             op_code._error=901
         return op_code
@@ -179,3 +183,22 @@ Exiting
     @property
     def version(self):
         return self._version
+
+    def help(self, op_code):
+        """Provides Help on how to use the CLI"""
+        if len(op_code._inp_params) > 0:
+            if op_code._inp_params[0] in self._primitives:
+                op_code._feedback = "Not implemented yet"
+        else:
+            op_code._feedback = "PyProjMan version {} - {} release!".format(self.version, self.release)
+            op_code._feedback = op_code._feedback + "\nList of keywords :"
+            for verb_key, primitive_key in self._verbs.items():
+                op_code._feedback = op_code._feedback  + "\n {} - {}".format(verb_key,self.help_primitive(primitive_key))
+                # TODO: add a help dictionary tied to primitives
+        op_code._error = 100
+        op_code._override_feedback = True
+        return op_code
+
+    def help_primitive(self, prim):
+        """Givin a primitive key, get help text"""
+        return "Feature not implemented yet"
