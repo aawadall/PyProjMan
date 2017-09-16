@@ -13,7 +13,7 @@ class Task:
     def __init__(self, name=None):
         # Basic Information
         self._id = uuid.uuid4()
-        self._short_id = next(self.taskid)
+        self._short_id = next(self.task_id)
         self._name = name
         # Timing Metrics
         self._planned = None
