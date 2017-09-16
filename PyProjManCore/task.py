@@ -1,5 +1,5 @@
 import itertools
-
+import uuid 
 # Building Block
 import PyProjManCore.helpers
 from PyProjManCore.time_element import TimeElement
@@ -12,7 +12,8 @@ class Task:
 
     def __init__(self, name=None):
         # Basic Information
-        self._id = next(self.taskid)
+        self._id = uuid.uuid4()
+        self._short_id = next(self.taskid)
         self._name = name
         # Timing Metrics
         self._planned = None
