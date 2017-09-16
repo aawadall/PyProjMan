@@ -5,6 +5,8 @@ Commandline Based Project Management Application, written in Python.
 
 #### Build Status 
 
+___Update___ Alpha is a few hours away from sealing. we already started working on Beta, and doing final tests on the alpha 
+
  _Note that some of those badges takes up to 6 hours to update_
  
 Metric      | Shields | Notes
@@ -50,13 +52,14 @@ Estimated Release Date | Sept 17' 2017
 ----------------------:|--------------:
 Estimated Effort       | 2 man weeks
 
+
 #### Features & Specs
 
 - [x] Basic Application Skeleton 
 - [x] Commandline user interface 
 - [x] Define the **_task_**, as basic building block of the project 
-- [x] Tasks defined in runtime without saving them 
-- [ ] Calculate Project statistics, in a text report 
+- [x] Tasks defined in runtime without saving them
+- [ ] <strike>Calculate Project statistics, in a text report </strike>  _defferred to beta_
 - [x] Build unit tests for each feature 
  
 
