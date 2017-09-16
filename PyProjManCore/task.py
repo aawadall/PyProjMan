@@ -1,4 +1,4 @@
-import uuid
+import itertools
 
 # Building Block
 import PyProjManCore.helpers
@@ -8,10 +8,11 @@ from PyProjManCore.time_element import TimeElement
 class Task:
     """Building block of a project plan"""
     type = "Task Element"
+    task_id = itertools.count()
 
     def __init__(self, name=None):
         # Basic Information
-        self._id = uuid.uuid4()
+        self._id = next(self.taskid)
         self._name = name
         # Timing Metrics
         self._planned = None
