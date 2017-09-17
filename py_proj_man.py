@@ -9,7 +9,7 @@ def main(args=None):
     print("\033[1mWelcome to PyProjMan")
     p = PyProjManParser(config_file = os.path.join(os.getcwd(),'PyProjManUI','data', 'parser.json'))
     if p.valid:
-        print("""\033[0mRelease : {} - \033[1m {}\033[0m 
+        print("""\033[0mRelease : {} - \033[1m {}\033[0m
 A commandline project management tool
 With Brains!""".format(p.version, p.release))
         if args is not None:

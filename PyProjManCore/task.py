@@ -1,5 +1,5 @@
 import itertools
-import uuid 
+import uuid
 # Building Block
 import PyProjManCore.helpers
 from PyProjManCore.time_element import TimeElement
