@@ -1,5 +1,5 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![First Timers](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)(http://www.firsttimersonly.com/)
+[![First Timers](http://img.shields.io/badge/first--timers--only-friendly-blue.svg?style=flat-square)](http://www.firsttimersonly.com/)
 # PyProjMan
 Commandline Based Project Management Application, written in Python. 
 [![Codetree](https://codetree.com/images/managed-with-codetree.svg)](https://codetree.com/projects/KAo6)
