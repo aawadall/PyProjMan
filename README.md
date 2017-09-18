@@ -26,11 +26,13 @@ In addition, exposure to large number of projects, would allow the tool to figur
 
 ## Usage 
 To run PyProjMan 
+
 1. download the project 
 
 `git clone https://github.com/aawadall/PyProjMan.git`
 
 you can also download it as [zip][4] file 
+
 2. run the following command 
 
 `python py_proj_man.py`
