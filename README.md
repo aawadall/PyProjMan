@@ -1,4 +1,4 @@
-
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 # PyProjMan
 Commandline Based Project Management Application, written in Python. 
 [![Codetree](https://codetree.com/images/managed-with-codetree.svg)](https://codetree.com/projects/KAo6)
