@@ -42,6 +42,8 @@ you can also download it as [zip][4] file
 This project is in deep need for contributors, in development, artwork, system design, testing, and documentation.
 If you are interested, please check out  [contribution guidelines][1]
 
+You can also have a look at the [Wiki pages](https://github.com/aawadall/PyProjMan/wiki) of this repo
+
 ## Project Releases
 I intend to release this project in small cycles (not decided yet, how frequent), and will take issues from the features backlog, into those releases.
 
