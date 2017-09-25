@@ -4,7 +4,7 @@
 Commandline Based Project Management Application, written in Python. 
 [![Codetree](https://codetree.com/images/managed-with-codetree.svg)](https://codetree.com/projects/KAo6)
 
-PyProjMan is currently under redesign phase!
+PyProjMan is currently under redesign phase! This might push delivery date for Beta release. 
 
 #### Build Status 
 
