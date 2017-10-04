@@ -48,17 +48,6 @@ If you are interested, please check out  [contribution guidelines][1]
 
 You can also have a look at the [Wiki pages](https://github.com/aawadall/PyProjMan/wiki) of this repo
 
-## Project Releases
-I intend to release this project in small cycles (not decided yet, how frequent), and will take issues from the features backlog, into those releases.
-
-First few releases might not be stable, but hopefully by the first release after alpha and beta releases it should be usable.
-
-### Current Release : [Beta][3]
-
-Estimated Release Date | Oct 1' 2017
-----------------------:|--------------:
-Estimated Effort       | 2 man weeks
-
 
 [1]: https://github.com/aawadall/PyProjMan/blob/master/CONTRIBUTING.md
 [2]: https://github.com/aawadall/PyProjMan/milestone/1
