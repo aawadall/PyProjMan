@@ -9,7 +9,7 @@ Commandline Based Project Management Application, written in Python.
 PyProjMan is currently under redesign phase! This might push delivery date for Beta release. 
 
 #### Build Status 
-
+[![](https://codescene.io/projects/1709/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/1709/jobs/latest-successful/results)
  _Note that some of those badges takes up to 6 hours to update_
  
 Metric      | Shields | Notes
